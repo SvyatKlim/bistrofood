@@ -1,0 +1,12 @@
+.team {
+  z-index: 3;
+
+  &__decor {
+    bottom: auto;
+    top: -40px;
+  }
+
+  &__img {
+    margin-top: -13%;
+  }
+}

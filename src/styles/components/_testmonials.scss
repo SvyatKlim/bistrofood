@@ -1,0 +1,82 @@
+.testimonials {
+  z-index: 3;
+  margin-top: 0;
+
+  &__decor {
+    &--top {
+      top: -60px;
+      bottom: auto;
+    }
+  }
+
+  &__items {
+    width: 100%;
+  }
+
+  &__item {
+    max-width: 768px;
+
+    &__customer {
+      .img {
+        max-width: 110px;
+        max-height: 110px;
+      }
+    }
+  }
+
+  &__items {
+    .swiper-pagination {
+      position: relative;
+      margin-top: 20px;
+
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: $beige;
+
+        &-active {
+          background-color: $orange;
+          border-color: $orange;
+        }
+      }
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      width: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border: 2px solid rgba($orange,0.8);
+        border-radius: 50%;
+        background: none;
+        font-size: 0;
+        width: 42px;
+        height: 42px;
+        transition: border-color 0.4s ease-out;
+      }
+      @media (hover:hover){
+        &:hover{
+          svg{
+            path{
+              fill: $orange-hover;
+            }
+          }
+          &:after{
+            border-color: $orange-hover;;
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      transform: rotate(180deg);
+    }
+  }
+}

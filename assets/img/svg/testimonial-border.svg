@@ -1,0 +1,14 @@
+<svg width="103" height="103" viewBox="0 0 103 103" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <mask id="mask0_65_11" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="103" height="103">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M102.317 46.084C101.968 47.132 102.041 48.1502 102.536 49.1382L91.03 83.699C90.043 84.194 89.374 84.9652 89.025 86.0132L56.451 102.316C55.403 101.968 54.385 102.04 53.397 102.534L18.836 91.0291C18.341 90.0411 17.57 89.3732 16.522 89.0242L0.218994 56.4502C0.567994 55.4022 0.495 54.384 0 53.396L11.506 18.8352C12.493 18.3402 13.162 17.569 13.511 16.521L46.085 0.218018C47.133 0.566018 48.151 0.494 49.139 0L83.7 11.5051C84.195 12.4921 84.966 13.161 86.014 13.51L102.317 46.084Z" fill="#FFFCE4"/>
+    </mask>
+    <g mask="url(#mask0_65_11)">
+        <rect x="-4" y="-3" width="109" height="109" fill="url(#pattern0)"/>
+    </g>
+    <defs>
+        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_65_11" transform="scale(0.00917431)"/>
+        </pattern>
+        <image id="image0_65_11" width="109" height="109" xlink:href=""/>
+    </defs>
+</svg>
