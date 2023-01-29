@@ -1,9 +1,6 @@
 /node_modules
-wp-content/themes/bestcasino/node_modules
 .idea
 package-lock.json
-wp-content/wflogs
-wp-config.php
 .htaccess
 /vendor/
 /composer.lock

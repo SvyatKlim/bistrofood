@@ -31,11 +31,11 @@ $socials = $mainFields['social'];
             if (!empty($socials)) : ?>
                 <div class="col-md-3 d-flex header__socials">
                     <ul class="social-network d-flex align-items-center gap-3">
-                        <?php if (!empty($socials['social_links'])){
+                        <?php if (!empty($socials['social_links'])) {
                             foreach ($socials['social_links'] as $link) : ?>
                                 <li class="d-flex">
                                     <a href="<?= $link['url']; ?>" class="social-network__icon" title="Twitter">
-                            <?= file_get_contents(SVG_URI . $link['icon']) ?>
+                                        <?= file_get_contents(SVG_URI . $link['icon']) ?>
                                     </a>
                                 </li>
                             <?php endforeach;
@@ -58,6 +58,9 @@ $socials = $mainFields['social'];
                     </ul>
                 </div>
             <?php endif; ?>
+            <div class="login">
+                <a class="nav-link active" href="/registration">Sign Up</a>
+            </div>
         </div>
     </nav>
 </header>

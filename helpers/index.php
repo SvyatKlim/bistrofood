@@ -40,14 +40,36 @@ function getContent(string $condition = "", bool $isSingle = false)
     return $fields = convertContentToAssoc($fields);
 }
 
-function showImageSrc(string $imgType = '',array $srcArr = [])
+function showImageSrc(string $imgType = '', array $srcArr = [])
 {
     foreach ($srcArr as $key => $source) {
         $imgSrc = IMAGES_URI . $source;
         foreach (IMAGE_BREAKPOINTS as $point => $breakpoint) {
             if ($point === $key) {
-               echo "<source media='(min-width:{$breakpoint})' srcset='{$imgSrc}' type='{$imgType}'>";
+                echo "<source media='(min-width:{$breakpoint})' srcset='{$imgSrc}' type='{$imgType}'>";
             }
         }
     }
+}
+
+function getRequestType(): string
+{
+    $type = filter_input(INPUT_POST, 'type');
+    unset($_POST['type']);
+
+    return htmlspecialchars($type);
+}
+
+function redirect(string $path = '/')
+{
+    $url = DOMAIN . $path;
+    header("Location: {$url}");
+    exit;
+}
+
+function redirectBack()
+{
+    $url = $_SERVER['HTTP_REFERER'];
+    header("Location: {$url}");
+    exit;
 }

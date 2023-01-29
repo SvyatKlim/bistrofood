@@ -19,7 +19,7 @@ if (!empty($team)) {
 if (!empty($reviews)) {
     require PARTS_DIR . '/home/testimonials.php';
 }
-//if (!empty($banner)) {
+if (!empty($gallery)) {
     require PARTS_DIR . '/home/gallery.php';
-//}
+}
 require PARTS_DIR . '/footer.php';
