@@ -38,23 +38,23 @@ $social_links = [
     'title' => 'Social Network',
     'social_links' => [
         [
-            'icon' => SVG_DIR . '/twitter-svgrepo-com.svg',
+            'icon' => SVG_URI . '/twitter-svgrepo-com.svg',
             'url' => 'https://twitter.com/'
         ],
         [
-            'icon' => SVG_DIR . '/facebook-svgrepo-com.svg',
+            'icon' => SVG_URI . '/facebook-svgrepo-com.svg',
             'url' => 'https://www.facebook.com/'
         ],
         [
-            'icon' => SVG_DIR . '/google-plus-svgrepo-com.svg',
+            'icon' => SVG_URI . '/google-plus-svgrepo-com.svg',
             'url' => 'https://myaccount.google.com/'
         ],
         [
-            'icon' => SVG_DIR . '/pinterest-svgrepo-com.svg',
+            'icon' => SVG_URI . '/pinterest-svgrepo-com.svg',
             'url' => 'https://www.pinterest.com/'
         ],
         [
-            'icon' => SVG_DIR . '/instagram-svgrepo-com.svg',
+            'icon' => SVG_URI . '/instagram-svgrepo-com.svg',
             'url' => 'https://www.instagram.com/'
         ],
     ]
@@ -271,5 +271,80 @@ $footer = [
             ]
         ],
         'copyright' => 'Copyright © 2021 Bistro Cafe. All rights reserved.'
+    ]
+];
+
+$gallery = [
+    'image_1' => [
+            'source' => [
+               'laptop' => 'photo01-660.png',
+               'mobile' => 'photo01-430.png',
+            ],
+            'image_type' => 'image/png',
+            'alt' => 'image 1'
+    ],
+    'image_2' => [
+        'source' => [
+            'laptop' => 'photo02-660.png',
+            'mobile' => 'photo02-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 2'
+    ],
+    'image_3' => [
+        'source' => [
+            'laptop' => 'photo03-660.png',
+            'mobile' => 'photo03-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 3'
+    ],
+    'image_4' => [
+        'source' => [
+            'laptop' => 'photo04-660.png',
+            'mobile' => 'photo04-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 4'
+    ],
+    'image_5' => [
+        'source' => [
+            'laptop' => 'photo05-660.png',
+            'mobile' => 'photo05-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 5'
+    ],
+    'image_6' => [
+        'source' => [
+            'laptop' => 'photo06-660.png',
+            'mobile' => 'photo06-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 6'
+    ],
+    'image_7' => [
+        'source' => [
+            'laptop' => 'photo07-660.png',
+            'mobile' => 'photo07-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 7'
+    ],
+    'image_8' => [
+        'source' => [
+            'laptop' => 'photo08-660.png',
+            'mobile' => 'photo08-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 8'
+    ],
+    'image_9' => [
+        'source' => [
+            'laptop' => 'photo09-660.png',
+            'mobile' => 'photo09-430.png',
+        ],
+        'image_type' => 'image/png',
+        'alt' => 'image 9'
     ]
 ];

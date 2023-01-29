@@ -1,4 +1,39 @@
 .header {
   backdrop-filter: saturate(180%) blur(10px);
-  background-color: rgba($black,0.6)
+  background-color: rgba($black, 0.6);
+
+  &__navbar-btn {
+    border-radius: 50%;
+    padding: 10px;
+    border: 1px solid white;
+    will-change: background-color, border-color;
+    transition: background-color 0.4s ease-out, border-color 0.4s ease-out;
+
+    .navbar-toggler-icon {
+      width: 24px;
+      height: 22px;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      transform: rotate(90deg);
+      will-change: rotate;
+      transition: transform 0.4s ease-out;
+    }
+
+    &.navbar-toggler:active, &.navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &.collapsed {
+      .navbar-toggler-icon {
+        transform: rotate(0deg);
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: $orange;
+        background-color: $orange;
+      }
+    }
+  }
 }

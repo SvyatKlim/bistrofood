@@ -30,6 +30,7 @@ const paths = {
 function clean() {
     return del(['assets/css/*', 'assets/js/*'])
 }
+
 function includeHtml(cb) {
     gulp.src(paths.html.src)
         .pipe(fileInclude({
@@ -85,16 +86,16 @@ function scriptsProd() {
 function watch() {
     gulp.watch(paths.styles.src, styles)
     gulp.watch(paths.scripts.src, scripts)
-    gulp.watch(paths.html.folder, includeHtml)
+    // gulp.watch(paths.html.folder, includeHtml)
 }
 
 // Таски для ручного запуска с помощью gulp clean, gulp html и т.д.
 exports.clean = clean
-exports.html = includeHtml
+// exports.html = includeHtml
 exports.styles = styles
 exports.scripts = scripts
 exports.watch = watch
 
 // Таск, который выполняется по команде gulp
-exports.default = gulp.series(clean, gulp.parallel(includeHtml, styles, scripts), watch)
-exports.prod = gulp.series(clean, gulp.parallel(includeHtml, styles, scriptsProd))
+exports.default = gulp.series(clean, gulp.parallel(styles, scripts), watch)
+exports.prod = gulp.series(clean, gulp.parallel(styles, scriptsProd))

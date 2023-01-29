@@ -1,0 +1,19 @@
+input {
+  padding: 5px 10px;
+  border-radius: 25px;
+  border-color: rgba($content, 0.1);
+  font-size: 14px;
+  font-family: $play-fair;
+  color: $black;
+  will-change: border-color;
+  transition: border-color 0.4s ease-in;
+
+  &:active, &:focus, :focus-visible {
+    border-color: rgba($content, 0.4);
+    outline: none;
+  }
+}
+
+.form-group {
+  padding: 0 20px 20px;
+}

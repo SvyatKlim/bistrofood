@@ -12,7 +12,8 @@
 <header class="header fixed-top">
     <nav class="navbar navbar-dark" aria-label="First navbar example">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler header__navbar-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01"
+                    aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -22,29 +23,84 @@
                 <img src="./assets/img/picture/logo.png" alt="logo">
             </a>
 
-            <div class="collapse navbar-collapse" id="navbarsExample01">
-                <ul class="navbar-nav me-auto mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <div class="col-md-3 d-flex">
+                <ul class="social-network d-flex align-items-center gap-3">
+                    <li class="d-flex">
+                        <a href="#" class="social-network__icon" title="Twitter">
+                            <svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Layer_1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="-271 296.6 256.4 208.4" xml:space="preserve">
+                            <path d="M-14.6,321.2c-9.4,4.2-19.6,7-30.2,8.3c10.9-6.5,19.2-16.8,23.1-29.1c-10.2,6-21.4,10.4-33.4,12.8
+                                c-9.6-10.2-23.3-16.6-38.4-16.6c-29,0-52.6,23.6-52.6,52.6c0,4.1,0.4,8.1,1.4,12c-43.7-2.2-82.5-23.1-108.4-55
+                                c-4.5,7.8-7.1,16.8-7.1,26.5c0,18.2,9.3,34.3,23.4,43.8c-8.6-0.3-16.7-2.7-23.8-6.6v0.6c0,25.5,18.1,46.8,42.2,51.6
+                                c-4.4,1.2-9.1,1.9-13.9,1.9c-3.4,0-6.7-0.3-9.9-0.9c6.7,20.9,26.1,36.1,49.1,36.5c-18,14.1-40.7,22.5-65.3,22.5
+                                c-4.2,0-8.4-0.2-12.6-0.7c23.3,14.9,50.9,23.6,80.6,23.6c96.8,0,149.7-80.2,149.7-149.7c0-2.3,0-4.6-0.1-6.8
+                                C-30.5,341-21.6,331.8-14.6,321.2"/>
+                            </svg>
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li class="d-flex">
+                        <a href="#" class="social-network__icon" title="Facebook">
+                            <svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Layer_1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="-337 273 123.5 256" xml:space="preserve">
+                                <path d="M-260.9,327.8c0-10.3,9.2-14,19.5-14c10.3,0,21.3,3.2,21.3,3.2l6.6-39.2c0,0-14-4.8-47.4-4.8c-20.5,0-32.4,7.8-41.1,19.3
+                                    c-8.2,10.9-8.5,28.4-8.5,39.7v25.7H-337V396h26.5v133h49.6V396h39.3l2.9-38.3h-42.2V327.8z"/>
+                            </svg>
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <li class="d-flex">
+                        <a href="#" class="social-network__icon" title="Google+">
+                            <svg width="20px" height="20px" viewBox="0 0 16 16" version="1.1"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffffff"
+                                      d="M16 3.9h-2.8v-2.6h-0.6v2.6h-2.7v0.8h2.7v2.6h0.6v-2.6h2.8z"></path>
+                                <path fill="#ffffff"
+                                      d="M6.9 9c-0.4-0.2-1.1-0.9-1.1-1.3s0.1-0.7 0.8-1.2c0.7-0.5 1.2-1.2 1.2-2.1 0-1.1-0.5-2.1-1.3-2.4h1.3l0.9-0.7c0 0-3.1 0-4.2 0-1.9 0-3.6 1.4-3.6 3.1s1.3 3 3.2 3c0.1 0 0.3 0 0.4 0-0.2 0.2-0.2 0.4-0.2 0.7 0 0.5 0.3 0.8 0.6 1.2-0.2 0-0.5 0-0.7 0-2.3 0-4.1 1.5-4.1 3s2 2.5 4.3 2.5c2.6 0 4.1-1.5 4.1-3-0.1-1.3-0.5-2-1.6-2.8zM4.7 6.9c-1.1 0-2.1-1.2-2.3-2.6s0.5-2.5 1.6-2.5c1.1 0 2.1 1.2 2.3 2.6s-0.5 2.6-1.6 2.5zM4.3 14.1c-1.6 0-2.8-1-2.8-2.2s1.4-2.2 3-2.2c0.4 0 0.7 0.1 1 0.2 0.9 0.6 1.5 0.9 1.7 1.6 0 0.1 0.1 0.3 0.1 0.4 0 1.2-0.8 2.2-3 2.2z"></path>
+                            </svg>
+                        </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                    <li class="d-flex">
+                        <a href="#" class="social-network__icon" title="Instagram+">
+                            <svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Layer_1"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="-271 273 256 256" xml:space="preserve">
+                                <path d="M-64.5,273h-157c-27.3,0-49.5,22.2-49.5,49.5v52.3v104.8c0,27.3,22.2,49.5,49.5,49.5h157c27.3,0,49.5-22.2,49.5-49.5V374.7
+                                    v-52.3C-15.1,295.2-37.3,273-64.5,273z M-50.3,302.5h5.7v5.6v37.8l-43.3,0.1l-0.1-43.4L-50.3,302.5z M-179.6,374.7
+                                    c8.2-11.3,21.5-18.8,36.5-18.8s28.3,7.4,36.5,18.8c5.4,7.4,8.5,16.5,8.5,26.3c0,24.8-20.2,45.1-45.1,45.1s-44.9-20.3-44.9-45.1
+                                    C-188.1,391.2-184.9,382.1-179.6,374.7z M-40,479.5C-40,493-51,504-64.5,504h-157c-13.5,0-24.5-11-24.5-24.5V374.7h38.2
+                                    c-3.3,8.1-5.2,17-5.2,26.3c0,38.6,31.4,70,70,70c38.6,0,70-31.4,70-70c0-9.3-1.9-18.2-5.2-26.3H-40V479.5z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="d-flex">
+                        <a href="#" class="social-network__icon" title="Pinterest">
+                            <svg fill="#ffffff" width="20px" height="20px" viewBox="-8.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.12 26.24c-0.080 0-0.2 0-0.28-0.040-0.44-0.16-0.68-0.64-0.52-1.080 0.48-1.4 1.32-4 2-6.56-0.4-0.68-0.6-1.48-0.68-2.48-0.12-1.96 0.6-5.64 2.080-5.8 0.24-0.040 1.040-0.040 1.28 1.24 0.28 1.44-0.2 4.040-0.88 6.68 0.32 0.28 0.8 0.44 1.36 0.44 3.080 0 4.76-3.040 4.76-5.88 0-2.44-1.24-5.28-4.72-5.28v0c-2.8 0-5.080 1.28-6.2 3.52-0.92 1.8-0.84 3.96 0.16 5.36 0.28 0.36 0.2 0.88-0.16 1.16s-0.88 0.2-1.16-0.16c-1.44-1.92-1.56-4.72-0.32-7.16 1.4-2.8 4.24-4.44 7.68-4.44v0c3.2 0 6.4 2.16 6.4 6.96 0 3.68-2.24 7.56-6.44 7.56-0.68 0-1.28-0.12-1.8-0.4-0.76 2.8-1.6 5.28-1.8 5.8-0.080 0.32-0.4 0.56-0.76 0.56z"></path>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
-                <form>
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                </form>
+            </div>
+
+            <div class="collapse navbar-collapse pt-30" id="navbarsExample01">
+                <ul class="navbar-nav me-auto mb-2 flex-row gap-3">
+                    <li class="nav-item col">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item col">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item col">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item col">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item col">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -67,17 +123,17 @@
                         <a href="#" class="btn">Find Out More</a>
                     </div>
                     <picture class="intro__slide__image">
-                        <source media="(min-width:1921px)" srcset="../assets/img/picture/avocado-first-screen-2560.jpg"
+                        <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>avocado-first-screen-2560.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:1441px)" srcset="../assets/img/picture/avocado-first-screen-1920.jpg"
+                        <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>avocado-first-screen-1920.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:840px)" srcset="../assets/img/picture/avocado-first-screen-1440.jpg"
+                        <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>avocado-first-screen-1440.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:480px)" srcset="../assets/img/picture/avocado-first-screen-tablet.jpg"
+                        <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>avocado-first-screen-tablet.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:300px)" srcset="../assets/img/picture/avocado-first-screen-mobile.jpg"
+                        <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>avocado-first-screen-mobile.jpg"
                                 type="image/jpg">
-                        <img src="../assets/img/picture/avocado-first-screen-mobile.jpg" alt="Avocado">
+                        <img src="<?= IMAGES_URI; ?>avocado-first-screen-mobile.jpg" alt="Avocado">
                     </picture>
 
                 </div>
@@ -93,17 +149,17 @@
                         <a href="#" class="btn">Find Out More</a>
                     </div>
                     <picture class="intro__slide__image">
-                        <source media="(min-width:1921px)" srcset="../assets/img/picture/burger-2560.jpg"
+                        <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>burger-2560.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:1441px)" srcset="../assets/img/picture/burger-1920.jpg"
+                        <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>burger-1920.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:840px)" srcset="../assets/img/picture/burger-1440.jpg"
+                        <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>burger-1440.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:480px)" srcset="../assets/img/picture/burger-tablet.jpg"
+                        <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>burger-tablet.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:300px)" srcset="../assets/img/picture/burger-mobile.jpg"
+                        <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>burger-mobile.jpg"
                                 type="image/jpg">
-                        <img src="../assets/img/picture/burger-mobile.jpg" alt="Burger">
+                        <img src="<?= IMAGES_URI; ?>burger-mobile.jpg" alt="Burger">
                     </picture>
                 </div>
                 <div class="swiper-slide d-flex-column justify-content-center h-100">
@@ -120,17 +176,17 @@
                         <a href="#" class="btn">Find Out More</a>
                     </div>
                     <picture class="intro__slide__image">
-                        <source media="(min-width:1921px)" srcset="../assets/img/picture/steak-2560.jpg"
+                        <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>steak-2560.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:1441px)" srcset="../assets/img/picture/steak-1920.jpg"
+                        <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>steak-1920.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:840px)" srcset="../assets/img/picture/steak-1440.jpg"
+                        <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>steak-1440.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:480px)" srcset="../assets/img/picture/steak-tablet.jpg"
+                        <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>steak-tablet.jpg"
                                 type="image/jpg">
-                        <source media="(min-width:300px)" srcset="../assets/img/picture/steak-mobile.jpg"
+                        <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>steak-mobile.jpg"
                                 type="image/jpg">
-                        <img src="../assets/img/picture/steak-mobile.jpg" alt="Steak">
+                        <img src="<?= IMAGES_URI; ?>steak-mobile.jpg" alt="Steak">
                     </picture>
                 </div>
             </div>
@@ -139,25 +195,25 @@
         </div>
         <div class="decor-bottom">
             <picture>
-                <source media="(min-width:1921px)" srcset="../assets/img/picture/intro-decor-2560.png" type="image/png">
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/intro-decor-1920.png" type="image/png">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/intro-decor-1440.png" type="image/png">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/intro-decor-1024.png" type="image/png">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/intro-decor-mob.png" type="image/png">
-                <img src="../assets/img/picture/intro-decor-mob.png" alt="Decor">
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>intro-decor-2560.png" type="image/png">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>intro-decor-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>intro-decor-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>intro-decor-1024.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>intro-decor-mob.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>intro-decor-mob.png" alt="Decor">
             </picture>
         </div>
 
     </section>
 
-    <section class="about pt-60 pb-80 overflow-visible">
+    <section class="about pt-100 pb-80 overflow-visible">
         <div class="about__bg bg-absolute z-index-1">
             <picture>
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/white-bg-1920.png" type="image/png">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/white-bg-1440.png" type="image/png">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/white-bg-tablet.png" type="image/png">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/white-bg-mobile.png" type="image/png">
-                <img src="../assets/img/picture/white-bg-mobile.png" alt="White background">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>white-bg-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>white-bg-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>white-bg-tablet.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>white-bg-mobile.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>white-bg-mobile.png" alt="White background">
             </picture>
         </div>
         <div class="container pt-60 pb-80 z-index-2">
@@ -177,8 +233,8 @@
                 </div>
                 <div class="col-xxl-5 about__img">
                     <picture>
-                        <!--                        <source media="(min-width:300px)" srcset="../assets/img/picture/white-bg-mobile.png" type="image/png">-->
-                        <img class="img-fluid" src="../assets/img/picture/eggs.png" alt="White background">
+                        <!--                        <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>white-bg-mobile.png" type="image/png">-->
+                        <img class="img-fluid" src="<?= IMAGES_URI; ?>eggs.png" alt="White background">
                     </picture>
                 </div>
             </div>
@@ -188,22 +244,32 @@
     <section class="products pt-after-header pb-80 overflow-visible z-index-3">
         <div class="about__bg bg-absolute z-index-1">
             <picture>
-                <source media="(min-width:1921px)" srcset="../assets/img/picture/tree-bg-2560.jpg" type="image/jpg">
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/tree-bg-1920.jpg" type="image/jpg">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/tree-bg-1440.jpg" type="image/jpg">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/tree-bg-tablet.jpg" type="image/jpg">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/tree-bg-mob.jpg" type="image/jpg">
-                <img src="../assets/img/picture/tree-bg-mob.jpg" alt="Tree background">
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>tree-bg-2560.jpg" type="image/jpg">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>tree-bg-1920.jpg" type="image/jpg">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>tree-bg-1440.jpg" type="image/jpg">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>tree-bg-tablet.jpg" type="image/jpg">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>tree-bg-mob.jpg" type="image/jpg">
+                <img src="<?= IMAGES_URI; ?>tree-bg-mob.jpg" alt="Tree background">
             </picture>
         </div>
         <div class="decor-top z-index-2">
             <picture>
-                <source media="(min-width:1921px)" srcset="../assets/img/picture/intro-decor-2560.png" type="image/png">
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/intro-decor-1920.png" type="image/png">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/intro-decor-1440.png" type="image/png">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/intro-decor-1024.png" type="image/png">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/intro-decor-mob.png" type="image/png">
-                <img src="../assets/img/picture/intro-decor-mob.png" alt="Decor">
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>intro-decor-2560.png" type="image/png">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>intro-decor-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>intro-decor-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>intro-decor-1024.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>intro-decor-mob.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>intro-decor-mob.png" alt="Decor">
+            </picture>
+        </div>
+        <div class="decor-bottom products__decor">
+            <picture>
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>intro-decor-2560.png" type="image/png">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>intro-decor-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>intro-decor-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>intro-decor-1024.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>intro-decor-mob.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>intro-decor-mob.png" alt="Decor">
             </picture>
         </div>
         <div class="container-fluid products__wrapper">
@@ -215,7 +281,7 @@
                         View All Menu For Tasty Meal Today
                     </p>
                     <picture class="d-flex title-decor justify-content-center align-items-center">
-                        <img src="../assets/img/picture/title-decor.png" alt="Decor">
+                        <img src="<?= IMAGES_URI; ?>title-decor.png" alt="Decor">
                     </picture>
                 </div>
 
@@ -226,7 +292,7 @@
                             <a href="#" class="product d-flex-column-center" target="_blank">
                                 <div class="product__img">
                                     <picture class="d-flex">
-                                        <img src="../assets/img/picture/choco-cake.jpg" alt="Chocolate Cake">
+                                        <img src="<?= IMAGES_URI; ?>choco-cake.jpg" alt="Chocolate Cake">
                                     </picture>
                                 </div>
 
@@ -259,7 +325,7 @@
                                 </div>
                                 <div class="product__img">
                                     <picture class="d-flex">
-                                        <img src="../assets/img/picture/steak-capo.jpg" alt="Chocolate Cake">
+                                        <img src="<?= IMAGES_URI; ?>steak-capo.jpg" alt="Chocolate Cake">
                                     </picture>
                                 </div>
 
@@ -269,7 +335,7 @@
                             <a href="#" class="product d-flex-column-center" target="_blank">
                                 <div class="product__img">
                                     <picture class="d-flex">
-                                        <img src="../assets/img/picture/king-burger.jpg" alt="Chocolate Cake">
+                                        <img src="<?= IMAGES_URI; ?>king-burger.jpg" alt="Chocolate Cake">
                                     </picture>
                                 </div>
 
@@ -301,7 +367,7 @@
                                 </div>
                                 <div class="product__img">
                                     <picture class="d-flex">
-                                        <img src="../assets/img/picture/mexican-burger.jpg" alt="Chocolate Cake">
+                                        <img src="<?= IMAGES_URI; ?>mexican-burger.jpg" alt="Chocolate Cake">
                                     </picture>
                                 </div>
                             </a>
@@ -318,11 +384,11 @@
     <section class="team z-index-1 pt-80">
         <div class="bg-absolute z-index-1">
             <picture>
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/white-bg-1920.png" type="image/png">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/white-bg-1440.png" type="image/png">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/white-bg-tablet.png" type="image/png">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/white-bg-mobile.png" type="image/png">
-                <img src="../assets/img/picture/white-bg-mobile.png" alt="White background">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>white-bg-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>white-bg-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>white-bg-tablet.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>white-bg-mobile.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>white-bg-mobile.png" alt="White background">
             </picture>
         </div>
         <div class="container pt-80 z-index-2">
@@ -345,12 +411,12 @@
                     <h4 class="text-orange fw-bold mb-0">Sara Peter</h4>
                     <h5>Executive Chef</h5>
                     <div class="d-flex mt-4">
-                        <img class="w-auto" src="../assets/img/picture/signature.png" alt="Chef signature">
+                        <img class="w-auto" src="<?= IMAGES_URI; ?>signature.png" alt="Chef signature">
                     </div>
                 </div>
                 <div class="col-xxl-5 team__img">
                     <picture>
-                        <img class="img-fluid" src="../assets/img/picture/Chefs.png" alt="Chefs photo">
+                        <img class="img-fluid" src="<?= IMAGES_URI; ?>Chefs.png" alt="Chefs photo">
                     </picture>
                 </div>
             </div>
@@ -358,12 +424,12 @@
 
         <div class="team__decor decor-bottom z-index-2">
             <picture>
-                <source media="(min-width:1921px)" srcset="../assets/img/picture/intro-decor-2560.png" type="image/png">
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/intro-decor-1920.png" type="image/png">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/intro-decor-1440.png" type="image/png">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/intro-decor-1024.png" type="image/png">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/intro-decor-mob.png" type="image/png">
-                <img src="../assets/img/picture/intro-decor-mob.png" alt="Decor">
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>intro-decor-2560.png" type="image/png">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>intro-decor-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>intro-decor-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>intro-decor-1024.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>intro-decor-mob.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>intro-decor-mob.png" alt="Decor">
             </picture>
         </div>
     </section>
@@ -371,26 +437,26 @@
     <section class="testimonials pt-after-header pb-100 overflow-visible">
         <div class="bg-absolute z-index-1">
             <picture>
-                <source media="(min-width:1921px)" srcset="../assets/img/picture/tree-bg-2560.jpg" type="image/jpg">
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/tree-bg-1920.jpg" type="image/jpg">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/tree-bg-1440.jpg" type="image/jpg">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/tree-bg-tablet.jpg" type="image/jpg">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/tree-bg-mob.jpg" type="image/jpg">
-                <img src="../assets/img/picture/tree-bg-mob.jpg" alt="Tree background">
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>tree-bg-2560.jpg" type="image/jpg">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>tree-bg-1920.jpg" type="image/jpg">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>tree-bg-1440.jpg" type="image/jpg">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>tree-bg-tablet.jpg" type="image/jpg">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>tree-bg-mob.jpg" type="image/jpg">
+                <img src="<?= IMAGES_URI; ?>tree-bg-mob.jpg" alt="Tree background">
             </picture>
         </div>
         <div class="decor-bottom testimonials__decor--top z-index-2">
             <picture>
-                <source media="(min-width:1921px)" srcset="../assets/img/picture/forest-decor-2560.png"
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>forest-decor-2560.png"
                         type="image/png">
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/forest-decor-1920.png"
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>forest-decor-1920.png"
                         type="image/png">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/forest-decor-1440.png" type="image/png">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/forest-decor-tablet.png"
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>forest-decor-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>forest-decor-tablet.png"
                         type="image/png">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/forest-decor-mobile.png"
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>forest-decor-mobile.png"
                         type="image/png">
-                <img src="../assets/img/picture/forest-decor-mobile.png" alt="Decor">
+                <img src="<?= IMAGES_URI; ?>forest-decor-mobile.png" alt="Decor">
             </picture>
         </div>
         <div class="container z-index-2 d-flex-column-center">
@@ -400,7 +466,7 @@
                     1500+ Satisfied Clients
                 </p>
                 <picture class="d-flex title-decor justify-content-center align-items-center">
-                    <img src="../assets/img/picture/title-decor.png" alt="Decor">
+                    <img src="<?= IMAGES_URI; ?>title-decor.png" alt="Decor">
                 </picture>
             </div>
             <div class="swiper testimonials__items js-testimonials-slider mt-5">
@@ -431,7 +497,7 @@
                                                 <use xlink:href="#image0_65_11" transform="scale(0.00917431)"/>
                                             </pattern>
                                             <image id="image0_65_11" width="109" height="109"
-                                                   xlink:href="../assets/img/picture/testimonial-1.png"/>
+                                                   xlink:href="<?= IMAGES_URI; ?>testimonial-1.png"/>
                                         </defs>
                                     </svg>
                                 </div>
@@ -466,7 +532,7 @@
                                                 <use xlink:href="#image0_65_12" transform="scale(0.00917431)"/>
                                             </pattern>
                                             <image id="image0_65_12" width="109" height="109"
-                                                   xlink:href="../assets/img/picture/testimonial-2.png"/>
+                                                   xlink:href="<?= IMAGES_URI; ?>testimonial-2.png"/>
                                         </defs>
                                     </svg>
                                 </div>
@@ -501,7 +567,7 @@
                                                 <use xlink:href="#image0_65_13" transform="scale(0.00917431)"/>
                                             </pattern>
                                             <image id="image0_65_13" width="109" height="109"
-                                                   xlink:href="../assets/img/picture/testimonial-1.png"/>
+                                                   xlink:href="<?= IMAGES_URI; ?>testimonial-1.png"/>
                                         </defs>
                                     </svg>
                                 </div>
@@ -530,37 +596,45 @@
                 </div>
             </div>
         </div>
+        <div class="decor-bottom">
+            <picture>
+                <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>intro-decor-2560.png" type="image/png">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>intro-decor-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>intro-decor-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>intro-decor-1024.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>intro-decor-mob.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>intro-decor-mob.png" alt="Decor">
+            </picture>
+        </div>
     </section>
     <section class="gallery  pt-80">
         <div class="bg-absolute z-index-1">
             <picture>
-                <source media="(min-width:1441px)" srcset="../assets/img/picture/white-bg-1920.png" type="image/png">
-                <source media="(min-width:840px)" srcset="../assets/img/picture/white-bg-1440.png" type="image/png">
-                <source media="(min-width:480px)" srcset="../assets/img/picture/white-bg-tablet.png" type="image/png">
-                <source media="(min-width:300px)" srcset="../assets/img/picture/white-bg-mobile.png" type="image/png">
-                <img src="../assets/img/picture/white-bg-mobile.png" alt="White background">
+                <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>white-bg-1920.png" type="image/png">
+                <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>white-bg-1440.png" type="image/png">
+                <source media="(min-width:480px)" srcset="<?= IMAGES_URI; ?>white-bg-tablet.png" type="image/png">
+                <source media="(min-width:300px)" srcset="<?= IMAGES_URI; ?>white-bg-mobile.png" type="image/png">
+                <img src="<?= IMAGES_URI; ?>white-bg-mobile.png" alt="White background">
             </picture>
         </div>
         <div class="container z-index-2 pt-60 d-flex-column-center">
-            <div class="col-xxl-4">
-                <h2 class="title fst-italic text-center"> Delicious Flavour
-                    of Autumn</h2>
-                <p class=" ext-center mt-4">
-                    View All Menu For Tasty Meal Today
-                </p>
+            <div class="col-xxl-10">
+                <h2 class="title fst-italic text-center">Booking Form</h2>
+                <p class=" text-center mt-4">
+                    Call  (800) 123-4567 from 5AM - 11PM daily, or book online with OpenTable. Reservations required for parties of 6 or more.                </p>
                 <picture class="d-flex title-decor justify-content-center align-items-center">
-                    <img src="../assets/img/picture/title-decor.png" alt="Decor">
+                    <img src="<?= IMAGES_URI; ?>title-decor-black.png" alt="Decor">
                 </picture>
             </div>
 
 
-            <div class="row products__items">
+            <div class="row products__items mt-5 ">
                 <div class="booking-form">
                     <div class="card">
                             <!-- Start Form -->
-                            <form id="bookingForm" action="#" method="" class="needs-validation" novalidate autocomplete="off">
+                            <form id="bookingForm" action="#" method="" class="needs-validation d-flex flex-wrap " novalidate autocomplete="off">
                                 <!-- Start Input Name -->
-                                <div class="form-group">
+                                <div class="form-group col-md-4 d-flex-column">
                                     <label for="inputName">Name</label>
                                     <input type="text" class="form-control" id="inputName" name="name" placeholder="Your name" required />
                                     <small class="form-text text-muted">Please fill your name</small>
@@ -568,7 +642,7 @@
                                 <!-- End Input Name -->
 
                                 <!-- Start Input Email -->
-                                <div class="form-group">
+                                <div class="form-group col-md-4 d-flex-column">
                                     <label for="inputEmail">Email</label>
                                     <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
                                     <small class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -576,7 +650,7 @@
                                 <!-- End Input Email -->
 
                                 <!-- Start Input Telephone -->
-                                <div class="form-group">
+                                <div class="form-group col-md-4 d-flex-column">
                                     <label for="inputPhone">Phone</label>
                                     <input type="tel" class="form-control" id="inputPhone" name="phone" placeholder="099xxxxxxx" pattern="\d{3}\d{3}\d{4}" required />
                                     <small class="form-text text-muted">We'll never share your phone number with anyone else.</small>
@@ -584,18 +658,18 @@
                                 <!-- End Input Telephone -->
 
                                 <!-- Start Input Date , Start Time and End Time -->
-                                <div class="form-row">
+                                <div class="form-row col-md-12 d-flex">
                                     <!-- Start Input Date -->
-                                    <div class="form-group col-md-4">
-                                        <label for="inputDate">Date</label>
+                                    <div class="form-group col-md-4 d-flex-column">
+                                        <label for="inputDate">Choose Date</label>
                                         <input type="date" class="form-control" id="inputDate" name="date" required />
                                         <small class="form-text text-muted">Please choose date and time for meeting.</small>
                                     </div>
                                     <!-- End Input Date -->
 
                                     <!-- Start Input Start Time -->
-                                    <div class="form-group col-md-4">
-                                        <label>Start Time</label>
+                                    <div class="form-group col-md-4 d-flex-column">
+                                        <label>Choose Time</label>
                                         <div class="d-flex flex-row justify-content-between align-items-center">
                                             <select class="form-control mr-1" id="inputStartTimeHour" name="startHour" required>
                                                 <option value="" disabled selected>Hour</option>
@@ -617,7 +691,11 @@
                                         </div>
                                     </div>
                                     <!-- End Input Start Time -->
-
+                                    <div class="form-group col-md-4 d-flex-column">
+                                        <label for="inputDate">How Many People</label>
+                                        <input type="number" class="form-control" id="inputPeople" name="number" required />
+                                        <small class="form-text text-muted">Please choose how much people will be .</small>
+                                    </div>
                                 </div>
                                 <!-- End Input Date , Start Time and End Time -->
 
@@ -641,45 +719,45 @@
             <div class="row">
                 <div class="col-md-4 mt-3 col-lg-4">
                     <picture>
-                        <source media="(min-width:840px)" srcset="../assets/img/picture/photo01-660.png" type="image/png">
-                        <img src="../assets/img/picture/photo01-430.png" class="img-fluid" alt="image">
+                        <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo01-660.png" type="image/png">
+                        <img src="<?= IMAGES_URI; ?>photo01-430.png" class="img-fluid" alt="image">
                     </picture>
                 </div>
                 <div class="col-md-4 mt-3 col-lg-4">
                     <picture>
-                        <source media="(min-width:840px)" srcset="../assets/img/picture/photo02-660.png" type="image/png">
-                        <img src="../assets/img/picture/photo02-430.png" class="img-fluid" alt="image">
+                        <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo02-660.png" type="image/png">
+                        <img src="<?= IMAGES_URI; ?>photo02-430.png" class="img-fluid" alt="image">
                     </picture>
                 </div>
                 <div class="col-md-4 mt-3 col-lg-4">
                     <picture>
-                        <source media="(min-width:840px)" srcset="../assets/img/picture/photo03-660.png" type="image/png">
-                        <img src="../assets/img/picture/photo03-430.png" class="img-fluid" alt="image">
+                        <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo03-660.png" type="image/png">
+                        <img src="<?= IMAGES_URI; ?>photo03-430.png" class="img-fluid" alt="image">
                     </picture>
                 </div>
                 <div class="col-md-4 mt-3 col-lg-6">
-                    <source media="(min-width:840px)" srcset="../assets/img/picture/photo07-660.png" type="image/png">
-                    <img src="../assets/img/picture/photo07-430.png" class="img-fluid" alt="image">
+                    <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo07-660.png" type="image/png">
+                    <img src="<?= IMAGES_URI; ?>photo07-430.png" class="img-fluid" alt="image">
                 </div>
                 <div class="col-md-4 mt-3 col-lg-6">
-                    <source media="(min-width:840px)" srcset="../assets/img/picture/photo09-660.png" type="image/png">
-                    <img src="../assets/img/picture/photo09-430.png" class="img-fluid" alt="image">
+                    <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo09-660.png" type="image/png">
+                    <img src="<?= IMAGES_URI; ?>photo09-430.png" class="img-fluid" alt="image">
                 </div>
                 <div class="col-md-4 mt-3 col-lg-3">
-                    <source media="(min-width:840px)" srcset="../assets/img/picture/photo05-660.png" type="image/png">
-                    <img src="../assets/img/picture/photo05-430.png" class="img-fluid" alt="image">
+                    <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo05-660.png" type="image/png">
+                    <img src="<?= IMAGES_URI; ?>photo05-430.png" class="img-fluid" alt="image">
                 </div>
                 <div class="col-md-4 mt-3 col-lg-3">
-                    <source media="(min-width:840px)" srcset="../assets/img/picture/photo06-660.png" type="image/png">
-                    <img src="../assets/img/picture/photo06-430.png" class="img-fluid" alt="image">
+                    <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo06-660.png" type="image/png">
+                    <img src="<?= IMAGES_URI; ?>photo06-430.png" class="img-fluid" alt="image">
                 </div>
                 <div class="col-md-4 mt-3 col-lg-3">
-                    <source media="(min-width:840px)" srcset="../assets/img/picture/photo04-660.png" type="image/png">
-                    <img src="../assets/img/picture/photo04-430.png" class="img-fluid" alt="image">
+                    <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo04-660.png" type="image/png">
+                    <img src="<?= IMAGES_URI; ?>photo04-430.png" class="img-fluid" alt="image">
                 </div>
                 <div class="col-md-4 mt-3 col-lg-3">
-                    <source media="(min-width:840px)" srcset="../assets/img/picture/photo08-660.png" type="image/png">
-                    <img src="../assets/img/picture/photo08-430.png" class="img-fluid" alt="image">
+                    <source media="(min-width:840px)" srcset="<?= IMAGES_URI; ?>photo08-660.png" type="image/png">
+                    <img src="<?= IMAGES_URI; ?>photo08-430.png" class="img-fluid" alt="image">
                 </div>
 
             </div>

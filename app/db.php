@@ -1,7 +1,7 @@
 <?php
 // SELECT [columns] FROM [table] [conditions]
 
-function dbSelect(Tables $table, string $columns = '*', string $condition = null, string $order = null, bool $is_single = false)
+function dbSelect(Tables $table, string $columns = '*', string $condition = null, string $order = null, bool $isSingle = false)
 {
     $query = "SELECT {$columns} FROM {$table->value}";
     $query .= $condition ? " WHERE {$condition}" : "";
@@ -10,7 +10,7 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
     $query = DB::connect()->prepare($query);
     $query->execute();
 
-    return $is_single ? $query->fetch() : $query->fetchAll();
+    return $isSingle ? $query->fetch() : $query->fetchAll();
 }
 
 function dbFind(Tables $table, int $id){

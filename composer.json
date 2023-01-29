@@ -1,0 +1,17 @@
+{
+    "name": "svyat/bistrofood",
+    "autoload": {
+        "psr-4": {
+            "Svyat\\Bistrofood\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Svyat",
+            "email": "svyat.klimenko@gmail.com"
+        }
+    ],
+    "require": {
+        "larapack/dd": "^1.1"
+    }
+}
