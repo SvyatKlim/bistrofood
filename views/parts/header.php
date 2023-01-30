@@ -58,9 +58,16 @@ $socials = $mainFields['social'];
                     </ul>
                 </div>
             <?php endif; ?>
+            <?php if(isAuth()): ?>
             <div class="login">
-                <a class="nav-link active" href="/registration">Sign Up</a>
+                <a class="nav-link " href="/login">Sign In</a>
+                <a class="nav-link " href="/registration">Sign Up</a>
             </div>
+            <?php else: ?>
+                <div class="logout">
+                    <a class="nav-link " href="/logout">Log Out</a>
+                </div>
+            <?php endif;?>
         </div>
     </nav>
 </header>

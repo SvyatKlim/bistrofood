@@ -73,3 +73,33 @@ function redirectBack()
     header("Location: {$url}");
     exit;
 }
+
+function emptyFields(array $fields, string $sessionKey): bool
+{
+    $result = false;
+    $emptyFeilds = array_keys($fields, null);
+    if (!empty($emptyFeilds)) {
+        foreach ($emptyFeilds as $fieldName) {
+            $_SESSION[$sessionKey]['errors'][$fieldName] = "Field '{$fieldName}' is empty";
+        }
+        $result = true;
+    }
+
+    return $result;
+}
+
+function formError(string|null $message = null): string
+{
+    $template = '<div class="mt-3 mb-3">
+                    <span class="alert alert-danger">%s</span>
+                 </div>';
+
+    return $message ? sprintf($template, $message) : '';
+}
+function conditionRedirect(bool $condition = false, $path = '/' ) {
+    if ($condition ) {
+        redirect($path);
+    }
+}
+
+

@@ -7,10 +7,27 @@ function createUserParams(): array
           'flags' => FILTER_CALLBACK,
           'filter' => 'is_string'
         ],
-        'last_name' => [
+        'surname' => [
             'flags' => FILTER_CALLBACK,
             'filter' => 'is_string'
         ],
+        'email' => FILTER_VALIDATE_EMAIL,
+        'password' => [
+            'flags' => FILTER_CALLBACK,
+            'filter' => 'is_string'
+        ],
+        'password_confirmation' => [
+            'flags' => FILTER_CALLBACK,
+            'filter' => 'is_string'
+        ],
+    ];
+
+    return filter_input_array(INPUT_POST, $options);
+}
+
+function loginUserParams(): array
+{
+    $options = [
         'email' => FILTER_VALIDATE_EMAIL,
         'password' => [
             'flags' => FILTER_CALLBACK,

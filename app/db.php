@@ -13,10 +13,22 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
     return $isSingle ? $query->fetch() : $query->fetchAll();
 }
 
-function dbFind(Tables $table, int $id){
+function dbFind(Tables $table, int $id)
+{
     $query = DB::connect()->prepare("SELECT * FROM {$table} WHERE id = {$id} ");
-    $query->bindParam('id',$id,PDO::PARAM_INT);
+    $query->bindParam('id', $id, PDO::PARAM_INT);
     $query->execute();
 
     return $query->fetch();
+}
+
+function getUserByEmail(string $email): array|bool
+{
+    $user = dbSelect(Tables::Users, condition: "email = '{$email}'", isSingle: true);
+
+    if (!$user) {
+        return false;
+    }
+
+    return $user;
 }
