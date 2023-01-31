@@ -3,7 +3,7 @@ $footer = $mainFields['footer']['info'] ?? [];
 $newsletter = $mainFields['footer']['newsletter'] ?? [];
 
 if (!empty($newsletter)) : ?>
-    <div class="container p-4 my-5 pb-60 pt-100 " >
+    <div class="container p-4 my-5 pb-60 pt-100 ">
         <!-- Section: Form -->
         <section class="newsletter">
             <form class="form" action="">
@@ -22,7 +22,8 @@ if (!empty($newsletter)) : ?>
                     <div class="col-md-5 col-12">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="form5Example2" placeholder="<?= $newsletter['field_placeholder']; ?>"
+                            <input type="email" id="form5Example2"
+                                   placeholder="<?= $newsletter['field_placeholder']; ?>"
                                    class="form-control"/>
                         </div>
                     </div>
@@ -42,8 +43,9 @@ if (!empty($newsletter)) : ?>
         </section>
         <!-- Section: Form -->
     </div>
-<?php endif;
-if (!empty($footer)): ?>
+<?php endif;?>
+</main>
+<?php if (!empty($footer)): ?>
     <footer class="text-white text-center text-lg-start bg-dark">
         <!-- Grid container -->
         <div class="container-fluid p-4">
@@ -116,7 +118,6 @@ if (!empty($footer)): ?>
         <?php endif ?>
     </footer>
 <?php endif ?>
-
 <script src="<?= ASSETS_URI ?>/js/scripts.min.js"></script>
 </body>
 </html>

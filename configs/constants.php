@@ -19,7 +19,9 @@ enum Tables: string
 
 const VIEW_DIR = ROOT_DIR . '/views';
 const PAGE_DIR = VIEW_DIR . '/pages';
+const ADMIN_PAGE_DIR = PAGE_DIR . '/admin';
 const PARTS_DIR = VIEW_DIR . '/parts';
+const ADMIN_PARTS_DIR = ADMIN_PAGE_DIR . '/parts';
 
 define("DOMAIN", $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
 

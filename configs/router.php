@@ -20,6 +20,16 @@ switch (getUrl()) {
         removeUser();
         redirect();
         break;
+    case 'admin/dashboard':
+        conditionRedirect(!isAdmin());
+        require ADMIN_PAGE_DIR . '/dashboard.php';
+        break;
+    case 'admin/products':
+        break;
+    case 'admin/products/create':
+        conditionRedirect(!isAdmin());
+        require PAGE_DIR . '/admin/products/create.php';
+        break;
     default :
         dd(getUrl() . ' - Not Found');
 }

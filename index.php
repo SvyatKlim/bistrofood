@@ -12,7 +12,7 @@ if (!session_id()) {
 }
 //require_once APP_DIR . '/data.php';
 require_once ROOT_DIR . '/configs/constants.php';
-require_once ROOT_DIR . '/helpers/index.php';
+require_once APP_DIR . '/helpers.php';
 
 
 try {
