@@ -1,4 +1,4 @@
-<section class="testimonials pt-after-header pb-100 overflow-visible">
+<section id="reviews" class="testimonials pt-after-header pb-100 overflow-visible">
     <div class="bg-absolute z-index-1">
         <picture>
             <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>tree-bg-2560.jpg" type="image/jpg">

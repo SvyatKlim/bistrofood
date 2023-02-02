@@ -1,4 +1,4 @@
-<section class="team z-index-1 pt-80">
+<section id="team" class="team z-index-1 pt-80">
     <div class="bg-absolute z-index-1">
         <picture>
             <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>white-bg-1920.png" type="image/png">

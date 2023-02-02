@@ -1,4 +1,4 @@
-<section class="intro vh-100 vw-100">
+<section id="banner" class="intro vh-100 vw-100">
     <div class="swiper-container js-intro-slider h-100 w-100">
         <!--            https://codepen.io/simranthapa/pen/eYmjYYw-->
         <div class="swiper-wrapper">

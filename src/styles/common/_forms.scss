@@ -1,5 +1,4 @@
-input {
-  padding: 5px 10px;
+input.form-control, select.form-control {
   border-radius: 25px;
   border-color: rgba($content, 0.1);
   font-size: 14px;
@@ -11,9 +10,46 @@ input {
   &:active, &:focus, :focus-visible {
     border-color: rgba($content, 0.4);
     outline: none;
+    box-shadow: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: rgba($orange, 0.8);
+    }
+  }
+}
+
+form {
+  padding: 30px;
+  .alert{
+    font-size: 14px;
+    padding: 10px;
   }
 }
 
 .form-group {
   padding: 0 20px 20px;
+  label{
+    font-size: 16px;
+  }
+}
+
+.newsletter {
+  .form {
+    padding:55px 30px;
+  }
+
+  &__email {
+    padding: 15px 20px;
+  }
+}
+
+.login,.registration{
+  .form{
+    padding: 15px;
+  }
+  &__card{
+    background-color: rgba($beige , 0.5);
+  }
 }

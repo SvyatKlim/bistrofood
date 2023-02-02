@@ -1,4 +1,4 @@
-<section class="gallery  pt-80">
+<section id="gallery" class="gallery  pt-80">
     <div class="bg-absolute z-index-1">
         <picture>
             <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>white-bg-1920.png" type="image/png">
@@ -10,7 +10,7 @@
     </div>
 
     <?php if (!empty($booking)): ?>
-        <div class="container z-index-2 pt-60 d-flex-column-center pb-100">
+        <div id="contact-us" class="container z-index-2 pt-60 d-flex-column-center pb-100">
             <div class="col-xxl-10">
                 <h2 class="title fst-italic text-center"><?= $booking['title'] ?? ''; ?></h2>
                 <p class=" text-center mt-4">
@@ -22,7 +22,7 @@
             </div>
             <div class="row products__items mt-5 ">
                 <div class="booking-form">
-                    <div class="card">
+                    <div class="d-flex-column">
                         <!-- Start Form -->
                         <form id="bookingForm" action="#" method="" class="needs-validation d-flex flex-wrap "
                               novalidate
@@ -85,7 +85,7 @@
                                             <option value="14">14</option>
                                             <option value="15">15</option>
                                         </select>
-                                        <div class="pl-1 pr-2">:</div>
+                                        <div class="pl-1 pr-2 ms-2 me-2">:</div>
                                         <select class="form-control" id="inputStartTimeMinute" name="startMinute"
                                                 required>
                                             <option value="" disabled selected>Min</option>
@@ -120,7 +120,7 @@
     <?php endif;
     if (!empty($gallery)):
         ?>
-        <div class="container z-index-2">
+        <div id="gallery" class="container z-index-2">
             <div class="row">
                 <?php
                 $keys = array_keys($gallery);

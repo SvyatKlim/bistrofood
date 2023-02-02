@@ -1,4 +1,4 @@
-<section class="products pt-after-header pb-80 overflow-visible z-index-3">
+<section id="catalog" class="products pt-after-header pb-80 overflow-visible z-index-3">
     <div class="about__bg bg-absolute z-index-1">
         <picture>
             <source media="(min-width:1921px)" srcset="<?= IMAGES_URI; ?>tree-bg-2560.jpg" type="image/jpg">

@@ -21,10 +21,8 @@ try {
     require_once APP_DIR . '/index.php';
 
     if (!empty($_POST)) {
-//        dd($_POST);
         require_once APP_DIR . '/forms/controller.php';
     } else {
-
         $mainFields = getContent('name IN ("navigation", "footer", "social")');
         require_once ROOT_DIR . '/configs/router.php';
     }

@@ -1,4 +1,3 @@
-import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import Carousel from "./components/carousel";
 import CarouselTestimonials from "./components/carouselTestimonials";
 

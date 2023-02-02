@@ -77,9 +77,9 @@ function redirectBack()
 function emptyFields(array $fields, string $sessionKey): bool
 {
     $result = false;
-    $emptyFeilds = array_keys($fields, null);
-    if (!empty($emptyFeilds)) {
-        foreach ($emptyFeilds as $fieldName) {
+    $emptyFields = array_keys($fields, null);
+    if (!empty($emptyFields)) {
+        foreach ($emptyFields as $fieldName) {
             $_SESSION[$sessionKey]['errors'][$fieldName] = "Field '{$fieldName}' is empty";
         }
         $result = true;
@@ -90,7 +90,7 @@ function emptyFields(array $fields, string $sessionKey): bool
 
 function formError(string|null $message = null): string
 {
-    $template = '<div class="mt-3 mb-3">
+    $template = '<div class="ms-3 mb-3">
                     <span class="alert alert-danger">%s</span>
                  </div>';
 

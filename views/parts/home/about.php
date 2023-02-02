@@ -1,4 +1,4 @@
-<section class="about pt-100 pb-80 overflow-visible">
+<section id="about-us" class="about pt-100 pb-80 overflow-visible">
     <div class="about__bg bg-absolute z-index-1">
         <picture>
             <source media="(min-width:1441px)" srcset="<?= IMAGES_URI; ?>white-bg-1920.png" type="image/png">
@@ -23,7 +23,8 @@
             <?php if (!empty($about['image'])) : ?>
                 <div class="col-xxl-5 about__img">
                     <picture>
-                        <img class="img-fluid" src="<?= IMAGES_URI . $about['image']['url']; ?>" alt="<?= $about['image']['alt']; ?>">
+                        <img class="img-fluid" src="<?= IMAGES_URI . $about['image']['url']; ?>"
+                             alt="<?= $about['image']['alt']; ?>">
                     </picture>
                 </div>
             <?php endif; ?>

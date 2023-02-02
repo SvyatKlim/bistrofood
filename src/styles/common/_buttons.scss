@@ -16,7 +16,17 @@
   @media (hover: hover) {
     &:hover {
       background-color: $orange-hover;
-      color: $white;
+      color: $white;}
+  }
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled){
+  &:active, &:focus, :focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: none;
     }
   }
 }
