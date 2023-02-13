@@ -10,7 +10,7 @@ const ROOT_DIR = __DIR__;
 if (!session_id()) {
     session_start();
 }
-//require_once APP_DIR . '/data.php';
+
 require_once ROOT_DIR . '/configs/constants.php';
 require_once APP_DIR . '/helpers.php';
 

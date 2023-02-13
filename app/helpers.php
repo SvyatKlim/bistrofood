@@ -96,10 +96,29 @@ function formError(string|null $message = null): string
 
     return $message ? sprintf($template, $message) : '';
 }
-function conditionRedirect(bool $condition = false, $path = '/' ) {
-    if ($condition ) {
+
+function conditionRedirect(bool $condition = false, $path = '/')
+{
+    if ($condition) {
         redirect($path);
     }
 }
 
+function calculatePagination(int $count, int $perPage): int
+{
+    return (int)round($count / $perPage);
+}
+
+function URL_exists(string $url): bool
+{
+// Open file
+    $handle = @fopen($url, 'r');
+
+// Check if file exists
+    if(!$handle){
+        return false;
+    }else{
+        return true;
+    }
+}
 

@@ -25,10 +25,12 @@ switch (getUrl()) {
         require ADMIN_PAGE_DIR . '/dashboard.php';
         break;
     case 'admin/products':
+        require ADMIN_PAGE_DIR . '/products/index.php';
         break;
+    case 'admin/products/edit':
     case 'admin/products/create':
         conditionRedirect(!isAdmin());
-        require PAGE_DIR . '/admin/products/create.php';
+        require ADMIN_PAGE_DIR . '/products/create.php';
         break;
     default :
         dd(getUrl() . ' - Not Found');

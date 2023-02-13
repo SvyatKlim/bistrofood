@@ -1,11 +1,12 @@
 <?php
 // SELECT [columns] FROM [table] [conditions]
 
-function dbSelect(Tables $table, string $columns = '*', string $condition = null, string $order = null, bool $isSingle = false)
+function dbSelect(Tables $table, string $columns = '*', string $condition = null, string $order = null, array $offset = null, bool $isSingle = false)
 {
     $query = "SELECT {$columns} FROM {$table->value}";
     $query .= $condition ? " WHERE {$condition}" : "";
     $query .= $order ? " ORDER BY {$order}" : "";
+    $query .= $offset ? " LIMIT {$offset[0]}, {$offset[1]}" : "";
 
     $query = DB::connect()->prepare($query);
     $query->execute();
@@ -31,4 +32,9 @@ function getUserByEmail(string $email): array|bool
     }
 
     return $user;
+}
+
+function dbCount(Tables $table, string $condition = null)
+{
+    return dbSelect($table, 'Count(id) as count', condition: $condition, isSingle: true);
 }

@@ -42,6 +42,13 @@ main {
   position: relative;
 }
 
+.alert {
+  position: absolute;
+  right: 0;
+  top: 15%;
+  z-index: 4;
+}
+
 button {
   font-size: 14px;
   padding: 0;
@@ -78,6 +85,7 @@ img {
 .custom-logo-link {
   display: flex;
   width: 90px;
+
   img {
     transition: width 0.3s ease-out;
   }
@@ -274,6 +282,7 @@ svg {
   &-3 {
     z-index: 3;
   }
+
   &-4 {
     z-index: 4;
   }

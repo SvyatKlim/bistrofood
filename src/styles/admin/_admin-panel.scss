@@ -1,0 +1,59 @@
+.admin-panel {
+  .admin-table form {
+    padding: 0;
+    .btn-group .admin-product-btn {
+        border-radius: 5px;
+        margin: 0 5px;
+        &.btn-danger{
+          background-color: #dd3c4c;
+          @media (hover:hover){
+            &:hover{
+              background-color: #ad1f2d;
+            }
+          }
+        }
+      }
+  }
+
+  output{
+    margin-top: 15px;
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+    border-radius: 5px;
+  }
+
+  output .image{
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+  }
+
+  output .image img{
+    height: 100%;
+    width: 100%;
+  }
+
+  output .image span {
+    position: absolute;
+    top: 0;
+    right: 13px;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+  }
+
+  output .image span:hover {
+    opacity: 0.8;
+  }
+
+  output .span--hidden{
+    visibility: hidden;
+  }
+}

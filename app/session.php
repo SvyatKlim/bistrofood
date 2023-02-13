@@ -35,3 +35,8 @@ function isAuth(): bool
 {
     return !empty($_SESSION['user']);
 }
+
+function notify(string $text, string $class = "success"): void
+{
+    $_SESSION['notify'] = compact('text', 'class');
+}

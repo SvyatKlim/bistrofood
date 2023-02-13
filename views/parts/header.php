@@ -14,6 +14,7 @@ $socials = $mainFields['social'];
     <link rel="stylesheet" href="<?= ASSETS_URI ?>/css/styles.min.css">
 </head>
 <body>
+<?php include PARTS_DIR . '/notification.php'?>
 <header class="header fixed-top">
     <nav class="navbar navbar-dark" aria-label="First navbar example">
         <div class="container-fluid ms-5 me-5">
@@ -30,7 +31,11 @@ $socials = $mainFields['social'];
                 </a>
             <?php endif; ?>
             <div class="navbar__inner d-flex col-4">
-                <?php if (!isAuth()): ?>
+                <?php if (isAdmin()) : ?>
+                <div class="admin d-flex align-items-center mb-0 me-2">
+                    <a class="nav-link h5 mb-0" href="admin/dashboard">Dashboard</a>
+                </div>
+                <?php endif; if (!isAuth()): ?>
                     <div class="login d-flex align-items-center mb-0 me-2">
                         <a class="nav-link h5 mb-0" href="/login">Sign In</a>
                         <span class="text-white" > | </span>
@@ -40,6 +45,7 @@ $socials = $mainFields['social'];
                     <div class="logout d-flex align-items-center mb-0 me-2">
                         <a class="nav-link h5 mb-0" href="/logout">Log Out</a>
                     </div>
+
                 <?php endif;
                 if (!empty($socials)) : ?>
                     <div class="col-md-3 d-flex header__socials">
