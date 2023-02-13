@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 29 2023 г., 16:38
+-- Время создания: Фев 13 2023 г., 04:57
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -38,7 +38,7 @@ CREATE TABLE `content` (
 --
 
 INSERT INTO `content` (`id`, `name`, `content`) VALUES
-(1, 'navigation', '{\"logo\": \"logo.png\", \"links\": [{\"hash\": \"#banner\", \"title\": \"Home\"}, {\"hash\": \"#about-us\", \"title\": \"Our Story\"}, {\"hash\": \"#catalog\", \"title\": \"Catalog\"}, {\"hash\": \"#gallery\", \"title\": \"Team\"}, {\"hash\": \"#reviews\", \"title\": \"Reviews\"}, {\"hash\": \"#contact-us\", \"title\": \"Contact Us\"}, {\"hash\": \"#gallery\", \"title\": \"Gallery\"}]}'),
+(1, 'navigation', '{\"logo\": \"logo.png\", \"links\": [{\"hash\": \"#banner\", \"title\": \"Home\"}, {\"hash\": \"#about-us\", \"title\": \"Our Story\"}, {\"hash\": \"#catalog\", \"title\": \"Catalog\"}, {\"hash\": \"#team\", \"title\": \"Team\"}, {\"hash\": \"#reviews\", \"title\": \"Reviews\"}, {\"hash\": \"#contact-us\", \"title\": \"Contact Us\"}, {\"hash\": \"#gallery\", \"title\": \"Gallery\"}]}'),
 (2, 'social', '{\"title\": \"Social Network\", \"social_links\": [{\"url\": \"https://twitter.com/\", \"icon\": \"twitter-svgrepo-com.svg\"}, {\"url\": \"https://www.facebook.com/\", \"icon\": \"facebook-svgrepo-com.svg\"}, {\"url\": \"https://myaccount.google.com/\", \"icon\": \"google-plus-svgrepo-com.svg\"}, {\"url\": \"https://www.pinterest.com/\", \"icon\": \"pinterest-svgrepo-com.svg\"}, {\"url\": \"https://www.instagram.com/\", \"icon\": \"instagram-svgrepo-com.svg\"}]}'),
 (3, 'banner', '{\"banner_slider\": {\"slide_0\": {\"image\": {\"alt\": \"Avocado\", \"source\": {\"laptop\": \"avocado-first-screen-1440.jpg\", \"mobile\": \"avocado-first-screen-mobile.jpg\", \"tablet\": \"avocado-first-screen-tablet.jpg\", \"desktop\": \"avocado-first-screen-1920.jpg\", \"widescreen\": \"avocado-first-screen-2560.jpg\"}, \"image_type\": \"image/jpg\"}, \"title\": \"Bistro Cafe\", \"button\": {\"url\": \"#\", \"name\": \"Find Out More\"}, \"subtitle\": \"Nothing brings together like\", \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis semnibh idelituis sed odio sit amet.\"}, \"slide_1\": {\"image\": {\"alt\": \"Burger\", \"source\": {\"laptop\": \"burger-1440.jpg\", \"mobile\": \"burger-mobile.jpg\", \"tablet\": \"burger-tablet.jpg\", \"desktop\": \"burger-1920.jpg\", \"widescreen\": \"burger-2560.jpg\"}, \"image_type\": \"image/jpg\"}, \"title\": \"Bistro Cafe\", \"button\": {\"url\": \"#\", \"name\": \"Find Out More\"}, \"subtitle\": \"Nothing brings together like\", \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis semnibh idelituis sed odio sit amet.\"}, \"slide_2\": {\"image\": {\"alt\": \"Steak\", \"source\": {\"laptop\": \"steak-1440.jpg\", \"mobile\": \"steak-mobile.jpg\", \"tablet\": \"steak-tablet.jpg\", \"desktop\": \"steak-1920.jpg\", \"widescreen\": \"steak-2560.jpg\"}, \"image_type\": \"image/jpg\"}, \"title\": \"Bistro Cafe\", \"button\": {\"url\": \"#\", \"name\": \"Find Out More\"}, \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis semnibh idelituis sed odio sit amet.\"}}}'),
 (4, 'about', '{\"image\": {\"alt\": \"White background\", \"url\": \"eggs.png\", \"image_type\": \"image/png\"}, \"title\": \"Who We Are\", \"button\": {\"url\": \"#\", \"text\": \"Find Out More\"}, \"subtitle\": \"Our Story\", \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis sem nibh id elituis sed odio sit amet. Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis sem nibh id elituis sed odio sit amet.\"}'),
@@ -89,8 +89,22 @@ CREATE TABLE `products` (
   `description` text,
   `quantity` int UNSIGNED DEFAULT '0',
   `price` float UNSIGNED DEFAULT '0',
-  `is_main` tinyint(1) DEFAULT '1'
+  `is_main` tinyint(1) DEFAULT '1',
+  `image_url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `quantity`, `price`, `is_main`, `image_url`) VALUES
+(1, 'Chocolate Cake', 'Class aptent taciti ciosqu litora torquent per  ', 100, 8, 1, ''),
+(5, 'Chocolate  Cake Masturbakedasdasdas ', 'Class aptent taciti ciosqu litora torquent per  as dasd as', 100, 1012, 1, ''),
+(6, 'Chocolate  Cake Masturbakedasdasdas  ad gfd gdf', 'Class aptent taciti ciosqu litora torquent per  as dasd as', 100, 1012, 1, ''),
+(9, 'Soy Sauce additional', 'Soy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy Sauce', 11212121, 2, 1, ''),
+(10, 'Hot Fudge Brownie', 'Chocolate Brownie with vanilla bean ice-cream', 75, 3, 1, ''),
+(22, 'GGG Steak Ribeye', 'Wagyu Ribeye with truffle-asiago-roasted garlic mashed potatoes and Blue Lake green beans with bacon, red onion, and garlic chips', 10, 81, 1, 'http://bistrofood.loc/assets/img/picture/uploads/loija-nguyen-NYBnDWeOX2c-unsplash.jpg'),
+(24, 'Something Burger', 'Hahahaha I am not a burger/ I am Kettle =)', 1, 100, 1, 'http://bistrofood.loc/assets/img/picture/uploads/coffee_kettle.png');
 
 -- --------------------------------------------------------
 
@@ -106,6 +120,15 @@ CREATE TABLE `users` (
   `password` text NOT NULL,
   `is_admin` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `is_admin`) VALUES
+(1, 'admin', 'adminovich', 'admin.adminovich@gmail.com', 'test1234', 0),
+(2, 'Test', 'test', 'test@gmail.com', '$2y$10$MhJwjJ07ROYCoa7DYST/1uVFqcAUX6.fVMJnVKx/QvQyPMyOhOVxK', 1),
+(9, 'admin', 'admin', 'admin@gmail.com', '$2y$10$iaO8BLj.xOljog5OoXNRVuu6GL/9FAwC33GoqTC2.pRuc17.ldcm6', 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -160,13 +183,13 @@ ALTER TABLE `order_products`
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

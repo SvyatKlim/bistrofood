@@ -2,7 +2,7 @@
 function createProduct(array $fields)
 {
     $fields['image_url'] = prepareImage();
-    createProductValidation($fields,'create_product');
+    createProductValidation($fields, 'create_product');
     createImage();
     $fields['is_main'] = (int)$fields['is_main'];
     $query = "INSERT INTO " . Tables::Products->value . "(name,description,quantity,price,is_main,image_url) VALUE (:name,:description,:quantity,:price,:is_main,:image_url)";
@@ -15,27 +15,32 @@ function createProduct(array $fields)
     redirect('/admin/products');
 }
 
-function includeProductForEdit(int $id){
-    return $getProduct = dbSelect(Tables::Products, "*","id = {$id}");
+function includeProductForEdit(int $id)
+{
+    return $getProduct = dbSelect(Tables::Products, "*", "id = {$id}");
 }
 
-function editProduct(array $fields) {
+function editProduct(array $fields)
+{
+    $postId = $fields['id'];
+    unset($fields['id']);
     $fields['image_url'] = prepareImage();
-    createProductValidation($fields,'edit_product');
+    createProductValidation($fields, 'edit_product');
     createImage();
     $fields['is_main'] = (int)$fields['is_main'];
-    $query = "UPDATE " . Tables::Products->value . "SET name = {$fields['name']},description = {$fields['description']},quantity = {$fields['quantity']},price = {$fields['price']},is_main = {$fields['is_main']},image_url = {$fields['image_url']} WHERE id = {$fields['id']};";
+    $query = "UPDATE " . Tables::Products->value . " SET name = :name , description = :description, quantity = :quantity,price = :price,is_main = :is_main,image_url = :image_url WHERE id = {$postId};";
     $query = DB::connect()->prepare($query);
+//    $query->bindParam(':id', $postId);
     $query->execute($fields);
 
     unset($_SESSION['edit_product']);
 
-    notify("Product '{$fields['name']}' was created.");
+    notify("Product '{$fields['name']}' was updated.");
     redirect('/admin/products');
 }
 
 
-function createProductValidation(array $fields,string $key): void
+function createProductValidation(array $fields, string $key): void
 {
     updateSessionFields($key, $fields);
 
@@ -43,11 +48,11 @@ function createProductValidation(array $fields,string $key): void
     unset($fields['is_main']);
 
     $isEmptyFields = emptyFields($fields, $key);
-    $isNegativeValues = validateOnNegativeValues($fields['price'], $fields['quantity'],$key);
+    $isNegativeValues = validateOnNegativeValues($fields['price'], $fields['quantity'], $key);
     conditionRedirect(($isEmptyFields || $isNegativeValues), '/admin/products/create');
 }
 
-function validateOnNegativeValues(float $price, int $quantity,string $sessionKey): bool
+function validateOnNegativeValues(float $price, int $quantity, string $sessionKey): bool
 {
     $result = false;
 
