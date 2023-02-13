@@ -54,9 +54,8 @@ function showImageSrc(string $imgType = '', array $srcArr = [])
 
 function getRequestType(): string
 {
-    $type = filter_input(INPUT_POST, 'type');
+    $type = str_replace('>', '' ,filter_input(INPUT_POST, 'type'));
     unset($_POST['type']);
-
     return htmlspecialchars($type);
 }
 

@@ -5,6 +5,6 @@ match (getRequestType()) {
     'login' => authUserHandler(loginUserParams()),
     'create_product' => createProduct(createProductParams()),
     'remove_product' => removeProduct(idProductParams()),
-    'edit_product' => editProduct(createProductParams()),
+    'edit_product' => editProduct(updateProductParams()),
     default => redirect()
 };
