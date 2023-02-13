@@ -1,7 +1,6 @@
 <?php
 function createProduct(array $fields)
 {
-//    dd($_FILES['image']['tmp_name']);
     $fields['image_url'] = prepareImage();
     createProductValidation($fields,'create_product');
     createImage();
@@ -21,12 +20,11 @@ function includeProductForEdit(int $id){
 }
 
 function editProduct(array $fields) {
-    dd($_GET);
     $fields['image_url'] = prepareImage();
     createProductValidation($fields,'edit_product');
     createImage();
     $fields['is_main'] = (int)$fields['is_main'];
-    $query = "UPDATE " . Tables::Products->value . "SET (name,description,quantity,price,is_main,image_url) VALUE (:name,:description,:quantity,:price,:is_main,:image_url)";
+    $query = "UPDATE " . Tables::Products->value . "SET name = {$fields['name']},description = {$fields['description']},quantity = {$fields['quantity']},price = {$fields['price']},is_main = {$fields['is_main']},image_url = {$fields['image_url']} WHERE id = {$fields['id']};";
     $query = DB::connect()->prepare($query);
     $query->execute($fields);
 
