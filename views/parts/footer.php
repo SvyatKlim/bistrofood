@@ -131,6 +131,9 @@ $newsletter = $mainFields['footer']['newsletter'] ?? [];
         <?php endif ?>
     </footer>
 <?php endif ?>
+
+<?php include_once PARTS_DIR . "/modals/buy_product.php"; ?>
+
 <script src="<?= ASSETS_URI ?>/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="<?= ASSETS_URI ?>/js/scripts.min.js"></script>
 </body>

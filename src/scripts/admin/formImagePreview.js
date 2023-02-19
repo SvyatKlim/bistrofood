@@ -23,13 +23,14 @@ const createProductImagePreview = () => {
         imagesArray.splice(index, 1)
         displayImages()
     }
-
-    input.addEventListener("change", function () {
-        const file = input.files
-        if (file.length > 0) {
-            imagesArray.push(file[0])
-            displayImages()
-        }
-    })
+    if (input) {
+        input.addEventListener("change", function () {
+            const file = input.files
+            if (file.length > 0) {
+                imagesArray.push(file[0])
+                displayImages()
+            }
+        })
+    }
 }
 export default createProductImagePreview;

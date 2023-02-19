@@ -18,6 +18,11 @@
       background-color: $orange-hover;
       color: $white;}
   }
+  &.btn-primary,&.btn-secondary{
+    &:hover{
+      border-color: transparent;
+    }
+  }
 }
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled),a{
   &:active, &:focus, :focus-visible {
