@@ -22,10 +22,9 @@ const buyProduct = () => {
     }
 
     const products = document.querySelectorAll(selectors.catalogItem),
-        form = document.querySelector(selectors.modal.form);
-        // id = form.querySelector(selectors.modal.productId);
-        console.log(form.querySelector(selectors.modal.productId))
-        const quantity = form.querySelector(selectors.modal.product.quantity),
+        form = document.querySelector(selectors.modal.form),
+        id = form.querySelector(selectors.modal.productId),
+        quantity = form.querySelector(selectors.modal.product.quantity),
         name = form.querySelector(selectors.modal.product.name),
         price = form.querySelector(selectors.modal.product.price),
         total = form.querySelector(selectors.modal.product.total),
@@ -87,7 +86,7 @@ const buyProduct = () => {
     }
 
     function renderPrice(price) {
-        return `<span class="price">${price}</span>$`;
+        return `<span class="price">${parseFloat(price).toFixed(1)}</span>$`;
     }
 
     function calculateFinalPrice() {
@@ -95,15 +94,15 @@ const buyProduct = () => {
         const additions = [...form.querySelectorAll(selectors.modal.additions.toggle + ':checked')],
             finalPriceElement = document.querySelector(selectors.finalPrice);
         if (additions.length > 0) {
-            additions.map((el)=> {
+            additions.map((el) => {
                 const parent = el.closest(selectors.modal.additions.item),
-                    total =parseFloat( parent.querySelector(`${selectors.modal.additions.total} .price`).textContent);
+                    total = parseFloat(parent.querySelector(`${selectors.modal.additions.total} .price`).textContent);
 
                 productTotal += total;
             })
         }
-        console.log(finalPriceElement,productTotal)
-        finalPriceElement.innerHTML = productTotal;
+        console.log(finalPriceElement, productTotal)
+        finalPriceElement.innerHTML = productTotal.toFixed(1);
     }
 
 }
