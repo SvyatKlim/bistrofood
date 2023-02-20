@@ -16,7 +16,7 @@ function dbSelect(Tables $table, string $columns = '*', string $condition = null
 
 function dbFind(Tables $table, int $id)
 {
-    $query = DB::connect()->prepare("SELECT * FROM {$table} WHERE id = {$id} ");
+    $query = DB::connect()->prepare("SELECT * FROM {$table->value} WHERE id = :id");
     $query->bindParam('id', $id, PDO::PARAM_INT);
     $query->execute();
 
@@ -26,6 +26,27 @@ function dbFind(Tables $table, int $id)
 function getUserByEmail(string $email): array|bool
 {
     $user = dbSelect(Tables::Users, condition: "email = '{$email}'", isSingle: true);
+
+    if (!$user) {
+        return false;
+    }
+
+    return $user;
+}
+function getUserById(int $id): array|bool
+{
+    $user = dbSelect(Tables::Users, condition: "id = '{$id}'", isSingle: true);
+
+    if (!$user) {
+        return false;
+    }
+
+    return $user;
+}
+
+function getProductById(int $id): array|bool
+{
+    $user = dbSelect(Tables::Products, condition: "id = '{$id}'", isSingle: true);
 
     if (!$user) {
         return false;

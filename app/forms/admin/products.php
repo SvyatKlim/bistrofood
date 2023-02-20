@@ -68,9 +68,10 @@ function validateOnNegativeValues(float $price, int $quantity, string $sessionKe
 
 function showMainProductsTable()
 {
-    $products = getProducts(page: $_GET['page'] ?? null);
-    $count = getProducts(isCount: true)['count'];
-    includeTable($products, $count);
+//    $products = getProducts(page: $_GET['page'] ?? null);
+//    $count = getProducts(isCount: true)['count'];
+//    includeTable($products, $count);
+    includeTable(getProducts());
 }
 
 function showAdditionalProductsTable()

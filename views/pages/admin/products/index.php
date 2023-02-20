@@ -6,7 +6,7 @@ require_once ADMIN_PARTS_DIR . '/header.php'; ?>
                 <div class="offset-md-2 col-md-8">
                     <h3>Main products</h3>
                     <?php showMainProductsTable(); ?>
-                    <hr class="mt-3 mb-3">
+<!--                    <hr class="mt-3 mb-3">-->
                     <h3>Additional Products</h3>
                     <?php showAdditionalProductsTable(); ?>
                 </div>

@@ -22,7 +22,12 @@ function getUrl(): string
     return explode('?', $url)[0];
 
 }
-
+function getHomeUrl () {
+    isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? $link = "https" : $link = "http";
+    $link .= "://";
+    $link .= $_SERVER['HTTP_HOST'];
+    return $link;
+}
 function convertContentToAssoc(array $data = []): array
 {
     $assoc = [];

@@ -10,6 +10,10 @@ function formSessionData(string $key)
     return compact('fields', 'errors');
 }
 
+function userId():int {
+    return $_SESSION['user']['id'];
+}
+
 function updateSessionFields(string $key, array $fields): void
 {
     unset($_SESSION[$key]);

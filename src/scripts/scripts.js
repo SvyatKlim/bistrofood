@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const teamsSlider = new CarouselTestimonials('.js-testimonials-slider', '.js-testimonials-slider-pagination');
     slider.init();
     teamsSlider.init();
-    buyProduct();
+    if (document.querySelector('body').classList.contains('home')){
+        buyProduct();
+    }
 
     // Need to split into another script
     if (document.querySelector('main').classList.contains('admin-panel')){

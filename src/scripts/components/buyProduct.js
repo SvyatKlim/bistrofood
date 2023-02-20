@@ -22,9 +22,10 @@ const buyProduct = () => {
     }
 
     const products = document.querySelectorAll(selectors.catalogItem),
-        form = document.querySelector(selectors.modal.form),
-        id = form.querySelector(selectors.modal.productId),
-        quantity = form.querySelector(selectors.modal.product.quantity),
+        form = document.querySelector(selectors.modal.form);
+        // id = form.querySelector(selectors.modal.productId);
+        console.log(form.querySelector(selectors.modal.productId))
+        const quantity = form.querySelector(selectors.modal.product.quantity),
         name = form.querySelector(selectors.modal.product.name),
         price = form.querySelector(selectors.modal.product.price),
         total = form.querySelector(selectors.modal.product.total),

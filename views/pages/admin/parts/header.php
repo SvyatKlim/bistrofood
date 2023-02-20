@@ -25,6 +25,8 @@
                 <?php endif; ?>
                 <div class="d-flex col-8 justify-content-end">
                     <a class="nav-link " href="/">Back to Site</a>
+                    <a class="nav-link " href="/admin/content">Content</a>
+                    <a class="nav-link " href="/admin/dashboard">Orders</a>
                     <a class="nav-link " href="/admin/products">All Products</a>
                     <a class="nav-link " href="/admin/products/create">Create Product</a>
                 </div>

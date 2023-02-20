@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 13 2023 г., 04:57
+-- Время создания: Фев 20 2023 г., 03:49
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -62,6 +62,13 @@ CREATE TABLE `orders` (
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `total`, `created_at`) VALUES
+(8, 9, 65.7, '2023-02-20 00:22:38');
+
 -- --------------------------------------------------------
 
 --
@@ -98,13 +105,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `quantity`, `price`, `is_main`, `image_url`) VALUES
-(1, 'Chocolate Cake', 'Class aptent taciti ciosqu litora torquent per  ', 100, 8, 1, ''),
-(5, 'Chocolate  Cake Masturbakedasdasdas ', 'Class aptent taciti ciosqu litora torquent per  as dasd as', 100, 1012, 1, ''),
-(6, 'Chocolate  Cake Masturbakedasdasdas  ad gfd gdf', 'Class aptent taciti ciosqu litora torquent per  as dasd as', 100, 1012, 1, ''),
-(9, 'Soy Sauce additional', 'Soy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy SauceSoy Sauce', 11212121, 2, 1, ''),
-(10, 'Hot Fudge Brownie', 'Chocolate Brownie with vanilla bean ice-cream', 75, 3, 1, ''),
 (22, 'GGG Steak Ribeye', 'Wagyu Ribeye with truffle-asiago-roasted garlic mashed potatoes and Blue Lake green beans with bacon, red onion, and garlic chips', 10, 81, 1, 'http://bistrofood.loc/assets/img/picture/uploads/loija-nguyen-NYBnDWeOX2c-unsplash.jpg'),
-(24, 'Something Burger', 'Hahahaha I am not a burger/ I am Kettle =)', 1, 100, 1, 'http://bistrofood.loc/assets/img/picture/uploads/coffee_kettle.png');
+(25, 'Soy Sauce Kikkoman', 'Traditionally Brewed Soy Sauce, Organic Soy Sauce, All Purpose Seasoning', 95, 0.2, 0, 'http://bistrofood.loc/assets/img/picture/uploads/31SSKtad0-L.jpg'),
+(26, 'The Hot Sauce BBQ', 'Spicy barbecue sauce for lovers of all kinds of meat\r\nAn authentic recipe that highlights the natural hotness, with added natural smoky flavor\r\nOnly the best peppers from our own harvest are used, without seeds, skins and husks\r\n100% natural product, no preservatives, no GMOs, no artificial additives, natural color and aroma', 30, 1.5, 0, 'http://bistrofood.loc/assets/img/picture/uploads/BBQ Sauce.jpg'),
+(27, 'Capo Steak', 'Class aptent taciti ciosqu', 20, 9.4, 1, 'http://bistrofood.loc/assets/img/picture/uploads/steak-capo.jpg'),
+(28, 'King Burger ', 'Class aptent taciti ciosqu \r\nClass aptent taciti ciosqu', 20, 8.5, 1, 'http://bistrofood.loc/assets/img/picture/uploads/king-burger.jpg'),
+(29, 'Mexican Burger', 'Class aptent taciti ciosqu', 25, 9.9, 1, 'http://bistrofood.loc/assets/img/picture/uploads/mexican-burger.jpg'),
+(30, 'Chocolate Cake ', 'Class aptent taciti ciosqu\r\nClass aptent taciti ciosqu\r\nClass aptent taciti ciosqu', 1, 7.9, 1, 'http://bistrofood.loc/assets/img/picture/uploads/choco-cake.jpg'),
+(31, 'Panna Cotta', 'The best Pana Cotta in our city.', 10, 5, 1, 'http://bistrofood.loc/assets/img/picture/uploads/panna-cotta.png');
 
 -- --------------------------------------------------------
 
@@ -128,7 +136,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `is_admin`) VALUES
 (1, 'admin', 'adminovich', 'admin.adminovich@gmail.com', 'test1234', 0),
 (2, 'Test', 'test', 'test@gmail.com', '$2y$10$MhJwjJ07ROYCoa7DYST/1uVFqcAUX6.fVMJnVKx/QvQyPMyOhOVxK', 1),
-(9, 'admin', 'admin', 'admin@gmail.com', '$2y$10$iaO8BLj.xOljog5OoXNRVuu6GL/9FAwC33GoqTC2.pRuc17.ldcm6', 1);
+(9, 'admin', 'admin', 'admin@gmail.com', '$2y$10$iaO8BLj.xOljog5OoXNRVuu6GL/9FAwC33GoqTC2.pRuc17.ldcm6', 1),
+(10, 'Sviat TEst', 'SciatTest', 'baspaldin@gmail.com', '$2y$10$bY9RIoDaVUKd3/LP3MwaSuSUp8/JMuo5XemCblqwFkFkLeztxTuna', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -171,25 +180,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

@@ -1,12 +1,14 @@
 .products {
-&__decor{
-  bottom: 36%;
-}
+  &__decor {
+    bottom: 36%;
+  }
+
   &__wrapper {
     height: 100%;
     position: relative;
     z-index: 1;
-    &:after{
+
+    &:after {
       content: "";
       position: absolute;
       left: 0;
@@ -19,11 +21,34 @@
       background-size: cover;
     }
   }
+  &__items {
+    margin-top: 55px;
+  }
 }
 
 .product {
   position: relative;
   cursor: pointer;
+
+  &.even {
+    .product__content {
+      order: 2;
+    }
+
+    .product__image {
+      order: 1;
+    }
+  }
+
+  &.odd {
+    .product__content {
+      order: 1;
+    }
+
+    .product__img {
+      order: 2;
+    }
+  }
 
   &::before {
     content: '';
@@ -62,6 +87,7 @@
     justify-content: center;
     transition: background-color 0.4s linear;
   }
+
 
   &__img {
     overflow: hidden;

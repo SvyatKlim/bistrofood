@@ -1,6 +1,8 @@
 <?php
 $nav = $mainFields['navigation'];
 $socials = $mainFields['social'];
+$cartIcon = file_get_contents(SVG_URI . 'cart.svg');
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,7 +15,7 @@ $socials = $mainFields['social'];
     <link rel="stylesheet" href="<?= ASSETS_URI ?>/vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="<?= ASSETS_URI ?>/css/styles.min.css">
 </head>
-<body>
+<body class="<?= getUrl() === "" ? 'home' : ''?>">
 <?php include PARTS_DIR . '/notification.php'?>
 <header class="header fixed-top">
     <nav class="navbar navbar-dark" aria-label="First navbar example">
@@ -30,7 +32,11 @@ $socials = $mainFields['social'];
                     <img src="<?= IMAGES_URI . $mainFields['navigation']['logo']; ?>" alt="logo">
                 </a>
             <?php endif; ?>
+
             <div class="navbar__inner d-flex col-4">
+                <a href="<?= getHomeUrl() . '/cart'; ?>" class="cart-link js-cart-icon d-flex align-items-center nav-link">
+                    <span class="me-2">Cart</span>  <?= $cartIcon;?>
+                </a>
                 <?php if (isAdmin()) : ?>
                 <div class="admin d-flex align-items-center mb-0 me-2">
                     <a class="nav-link h5 mb-0" href="admin/dashboard">Dashboard</a>

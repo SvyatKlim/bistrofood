@@ -43,14 +43,14 @@
 </table>
 
 <?php
-if ($count) :
-    $countOfLinks = calculatePagination($count, ADMIN_PRODUCTS_PER_PAGE);
-    ?>
-    <nav aria-label="Pagination">
-        <ul class="pagination">
-            <?php for ($i = 1; $i <= $countOfLinks; $i++) : ?>
-                <li class="page-item"><a class="page-link" href="/admin/products?page=<?= $i ?>"><?= $i ?></a></li>
-            <?php endfor; ?>
-        </ul>
-    </nav>
-<?php endif; ?>
+//if ($count) :
+//    $countOfLinks = calculatePagination($count, ADMIN_PRODUCTS_PER_PAGE);
+//    ?>
+<!--    <nav aria-label="Pagination">-->
+<!--        <ul class="pagination">-->
+<!--            --><?php //for ($i = 1; $i <= $countOfLinks; $i++) : ?>
+<!--                <li class="page-item"><a class="page-link" href="/admin/products?page=--><?//= $i ?><!--">--><?//= $i ?><!--</a></li>-->
+<!--            --><?php //endfor; ?>
+<!--        </ul>-->
+<!--    </nav>-->
+<?php //endif; ?>
