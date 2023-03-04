@@ -1,10 +1,13 @@
+const entries = {
+    scripts: __dirname + "/src/scripts/scripts.js",
+    admin: __dirname + "/src/scripts/admin.js",
+}
+
 module.exports = {
     dev: {
         mode: "development",
         devtool: 'source-map',
-        entry: {
-            scripts: __dirname + "/src/scripts/scripts.js",
-        },
+        entry: entries,
         externals: {
             jquery: 'jQuery',
         },
@@ -29,9 +32,7 @@ module.exports = {
     },
     prod: {
         mode: "production",
-        entry: {
-            scripts: __dirname + "/src/scripts/scripts.js",
-        },
+        entry: entries,
         externals: {
             jquery: 'jQuery',
         },

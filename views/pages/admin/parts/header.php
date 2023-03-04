@@ -19,7 +19,7 @@
             <div class="container d-flex col-12">
 
                 <?php if (!empty($mainFields['navigation']['logo'])): ?>
-                    <a class="navbar-brand custom-logo-link col-3" href="#">
+                    <a class="navbar-brand custom-logo-link col-3" href="/">
                         <img src="<?= IMAGES_URI . $mainFields['navigation']['logo']; ?>" alt="logo">
                     </a>
                 <?php endif; ?>

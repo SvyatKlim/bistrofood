@@ -1,18 +1,29 @@
 .admin-panel {
   .admin-table form {
     padding: 0;
-    .btn-group .admin-product-btn {
-        border-radius: 5px;
-        margin: 0 5px;
-        &.btn-danger{
-          background-color: #dd3c4c;
-          @media (hover:hover){
-            &:hover{
-              background-color: #ad1f2d;
-            }
+  }
+ .admin-product-btn {
+    border-radius: 5px;
+    margin: 0 5px;
+    &.btn-danger{
+      background-color: #dd3c4c;
+      @media (hover:hover){
+        &:hover{
+          background-color: #ad1f2d;
+        }
+      }
+      &.remove-link{
+        padding: 10px 15px;
+        svg{
+          width: 18px;
+          height: 18px;
+          margin-left: 6px;
+          path{
+            fill: $white;
           }
         }
       }
+    }
   }
 
   output{

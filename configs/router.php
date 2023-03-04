@@ -30,14 +30,17 @@ switch (getUrl()) {
         break;
     case (bool)preg_match('/admin\/content\/edit\/(\d+)/', getUrl(), $match):
         conditionRedirect(!isAdmin());
+
         $id = end($match);
         $block = dbFind(Tables::Content, $id);
         conditionRedirect(!$block, '/admin/content');
         $file = ADMIN_PAGE_DIR . "/content/blocks/${block['name']}.php";
+
         if (!file_exists($file)) {
             notify("View [${block['name']}] for editing this block doesnot exists", "warning");
             redirect('/admin/content');
         }
+
         require $file;
         break;
     case 'admin/products':
