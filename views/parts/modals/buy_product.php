@@ -53,7 +53,7 @@ $additions = dbSelect(Tables::Products, columns: 'id, name, quantity, price', co
                                         <div class="input-group-text">
                                             <span class="additional-price"><?= $product['price'] ?></span>$
                                         </div>
-                                        <input type="number" disabled class="form-control additional-qty"
+                                        <input type="number" disabled class="form-control additional-qty additional-qty-id-<?= $product['id']; ?>"
                                                aria-label="Amount(to the nearest dollar)" name="additions_qty[]" min="1"
                                                value=""
                                                max="<?= $product['quantity']; ?>">

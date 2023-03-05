@@ -15,17 +15,17 @@ $cartIcon = file_get_contents(SVG_URI . 'cart.svg');
     <link rel="stylesheet" href="<?= ASSETS_URI ?>/vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="<?= ASSETS_URI ?>/css/styles.min.css">
 </head>
-<body class="<?= getUrl() === "" ? 'home' : ''?>">
-<?php include PARTS_DIR . '/notification.php'?>
+<body class="<?= getUrl() === "" ? 'home' : '' ?>">
+<?php include PARTS_DIR . '/notification.php' ?>
 <header class="header fixed-top">
     <nav class="navbar navbar-dark" aria-label="First navbar example">
         <div class="container-fluid ms-5 me-5">
             <div class="col-4">
-            <button class="navbar-toggler header__navbar-btn collapsed" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+                <button class="navbar-toggler header__navbar-btn collapsed" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
 
             <?php if (!empty($mainFields['navigation']['logo'])): ?>
                 <a class="navbar-brand custom-logo-link col-4" href="/">
@@ -34,20 +34,25 @@ $cartIcon = file_get_contents(SVG_URI . 'cart.svg');
             <?php endif; ?>
 
             <div class="navbar__inner d-flex col-4">
-                <a href="<?= getHomeUrl() . '/cart'; ?>" class="cart-link js-cart-icon d-flex align-items-center nav-link">
-                    <span class="me-2">Cart</span>  <?= $cartIcon;?>
+                <a href="<?= getHomeUrl() . '/cart'; ?>"
+                   class="cart-link js-cart-icon d-flex align-items-center nav-link">
+                    <span class="me-2">Cart</span> <?= $cartIcon; ?>
                 </a>
                 <?php if (isAdmin()) : ?>
-                <div class="admin d-flex align-items-center mb-0 me-2">
-                    <a class="nav-link h5 mb-0" href="admin/dashboard">Dashboard</a>
-                </div>
-                <?php endif; if (!isAuth()): ?>
+                    <div class="admin d-flex align-items-center mb-0 me-2">
+                        <a class="nav-link h5 mb-0" href="admin/dashboard">Dashboard</a>
+                    </div>
+                <?php endif;
+                if (!isAuth()): ?>
                     <div class="login d-flex align-items-center mb-0 me-2">
                         <a class="nav-link h5 mb-0" href="/login">Sign In</a>
-                        <span class="text-white" > | </span>
+                        <span class="text-white"> | </span>
                         <a class="nav-link h5 mb-0" href="/registration">Sign Up</a>
                     </div>
                 <?php else: ?>
+                    <div class="d-flex align-items-center mb-0 me-2">
+                        <a class="nav-link " href="/account/orders">My Orders</a>
+                    </div>
                     <div class="logout d-flex align-items-center mb-0 me-2">
                         <a class="nav-link h5 mb-0" href="/logout">Log Out</a>
                     </div>
@@ -83,12 +88,12 @@ $cartIcon = file_get_contents(SVG_URI . 'cart.svg');
                 $isHome = !empty(getUrl());
                 $ariaCurrent = '';
                 $template = '';
-                if (!$isHome){
+                if (!$isHome) {
                     $template = '
                                 <li class="nav-item col">
                                     <a class="nav-link active h3" href="%s">%s</a>
                                 </li>';
-                }else{
+                } else {
                     $template = '
                                 <li class="nav-item col">
                                     <a class="nav-link active h3" href="/%s">%s</a>

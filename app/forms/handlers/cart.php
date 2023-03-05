@@ -2,7 +2,10 @@
 function addToCart(array $productData)
 {
     $items = readCardFromCookie();
-    $items = addOrCombinedProduct($items, checkProductAvailability($items, $productData));
+    $items = addOrCombineProduct(
+        $items,
+        checkProductAvailability($items, $productData)
+    );
 
     $expire = time() + (60 * 60 * 24 * 10);
 
@@ -12,9 +15,8 @@ function addToCart(array $productData)
     redirect();
 }
 
-function addOrCombinedProduct(array $cartItems, array $addedProduct): array
+function addOrCombineProduct(array $cartItems, array $addedProduct): array
 {
-
     $sameItem = array_filter(
         $cartItems,
         fn($item) => $item['product_id'] === $addedProduct['product_id'] && empty($item['additions'])
@@ -23,14 +25,12 @@ function addOrCombinedProduct(array $cartItems, array $addedProduct): array
     if (!empty($addedProduct['additions']) || empty($sameItem)) {
         $cartItems[] = $addedProduct;
     } else {
-        array_walk($cartItems, function (&$item, $key, $product) {
+        array_walk($cartItems, function(&$item, $key, $product) {
             if ($item['product_id'] === $product['product_id'] && empty($item['additions'])) {
-
                 $item['quantity'] += $product['quantity'];
             }
         }, $addedProduct);
     }
-
 
     return $cartItems;
 }
@@ -38,20 +38,18 @@ function addOrCombinedProduct(array $cartItems, array $addedProduct): array
 function checkProductAvailability(array $cartItems, array $addedProduct): array
 {
     $dbProduct = dbFind(Tables::Products, $addedProduct['product_id']);
-    $quantity = array_reduce($cartItems,
-        fn($sum, $item) => $addedProduct['product_id'] ? $sum + $item['quantity'] : 0,
-        0);
-    $sum = $addedProduct['quantity'] + $quantity;
-
-    $addedProduct['quantity'] = $dbProduct['quantity'] < $sum
-        ? ($dbProduct['quantity'] - $quantity)
-        : $dbProduct['quantity'];
+    $quantity = array_reduce(
+        $cartItems,
+        fn($sum, $item) => $item['product_id'] === $addedProduct['product_id'] ? $sum + $item['quantity'] : 0,
+        0
+    );
+    $sum = $quantity + $addedProduct['quantity'];
+    $addedProduct['quantity'] = $dbProduct['quantity'] < $sum ? ($dbProduct['quantity'] - $quantity) : $addedProduct['quantity'];
 
     if ($addedProduct['quantity'] === 0) {
-        notify("The sum of '{$dbProduct['name']}' in the cart more than in stock", 'danger');
+        notify("The sum of '{$dbProduct['name']}' in the cart more than in stock" , 'danger');
         redirect();
     }
-
 
     return $addedProduct;
 }
@@ -163,6 +161,13 @@ function removeCartItem(array $fields)
         if (!empty($cart[$parent_key]['additions'])) {
             $cart[$parent_key]['additions'] = array_values($cart[$parent_key]['additions']);
             $cart[$parent_key]['additions_qty'] = array_values($cart[$parent_key]['additions_qty']);
+        }else{
+            $item = $cart[$parent_key];
+            unset($cart[$parent_key]);
+            $cart = addOrCombineProduct(
+                array_values($cart),
+                $item
+            );
         }
     } else {
         unset($cart[$fields['product_key']]);

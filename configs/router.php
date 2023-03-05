@@ -55,6 +55,27 @@ switch (getUrl()) {
     case 'cart':
         require PAGE_DIR . '/cart.php';
         break;
+    case 'account/orders':
+        conditionRedirect(!isAuth());
+        $userId = userId();
+        $orders = dbSelect(Tables::Orders,condition: " user_id = {$userId}");
+        require PAGE_DIR . '/account/orders/index.php';
+        break;
+    case (bool)preg_match('/account\/orders\/(\d+)/', getUrl(), $match):
+        conditionRedirect(!isAuth());
+
+        $id = end($match);
+        $order = dbFind(Tables::Orders, $id);
+        conditionRedirect(!$order,'/account/orders');
+        if ($order['user_id'] !== userId()){
+            notify("You are not allowed to see this page", "danger");
+            redirect('/account/orders');
+        }
+
+        $products = productsByOrder($order['id']);
+
+        require PAGE_DIR . '/account/orders/show.php';
+        break;
     default :
         dd(getUrl() . ' - Not Found');
 }

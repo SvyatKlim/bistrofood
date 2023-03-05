@@ -1,3 +1,6 @@
+import Cookies from 'js-cookie'
+
+
 const buyProduct = () => {
     const selectors = {
         modal: {
@@ -46,6 +49,7 @@ const buyProduct = () => {
     })
     additionalToggleFields.forEach((el) => {
         el.addEventListener('change', function () {
+            console.log(el)
             const parentWrapper = this.closest(selectors.modal.additions.item),
                 additionalQuantity = parentWrapper.querySelector(selectors.modal.additions.qty),
                 additionalTotal = parentWrapper.querySelector(selectors.modal.additions.total),
@@ -59,11 +63,12 @@ const buyProduct = () => {
             } else {
                 additionalQuantity.disabled = true;
                 additionalQuantity.value = '';
+                additionalTotal.innerHTML = - renderPrice(parseFloat(additionalPrice.textContent));
+                calculateFinalPrice();
                 additionalTotal.innerHTML = '';
             }
         });
     });
-
     additionalQuantityFields.forEach((el) => {
         const parentWrapper = el.closest(selectors.modal.additions.item);
 
@@ -71,11 +76,12 @@ const buyProduct = () => {
             const additionalQuantity = parseInt(this.value) ?? 0,
                 additionalTotal = parentWrapper.querySelector(selectors.modal.additions.total),
                 additionalPrice = parentWrapper.querySelector(selectors.modal.additions.price).textContent * additionalQuantity;
-
             additionalTotal.innerHTML = renderPrice(additionalPrice.toFixed(1));
             calculateFinalPrice();
         });
     });
+
+    updateAdditionsQuantityFields();
 
     function changeTotalPrice(price) {
         quantity.addEventListener('change', function () {
@@ -101,8 +107,11 @@ const buyProduct = () => {
                 productTotal += total;
             })
         }
-        console.log(finalPriceElement, productTotal)
         finalPriceElement.innerHTML = productTotal.toFixed(1);
+    }
+
+    function updateAdditionsQuantityFields(){
+        console.log(Cookies.get())
     }
 
 }

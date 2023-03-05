@@ -59,3 +59,12 @@ function dbCount(Tables $table, string $condition = null)
 {
     return dbSelect($table, 'Count(id) as count', condition: $condition, isSingle: true);
 }
+
+function productsByOrder (int $orderId):array|bool {
+
+    $query = "SELECT p.id, p.name, p.description, op.quantity, op.single_price, op.additions FROM order_products op LEFT JOIN products p on op.product_id = p.id WHERE op.order_id = :order_id";
+    $query = DB::connect()->prepare($query);
+    $query->bindParam('order_id', $orderId, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetchAll();
+}

@@ -30,6 +30,7 @@
     "gulp-size": "^3.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
+    "js-cookie": "^3.0.1",
     "sass": "^1.37.5",
     "swiper": "^8.4.5",
     "webpack": "^5.73.0",
