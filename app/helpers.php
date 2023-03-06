@@ -129,10 +129,13 @@ function URL_exists(string $url): bool
     }
 }
 
+/**
+ * @throws Exception
+ */
 function requestToken(): bool
 {
     $token = filter_input(INPUT_POST, 'token');
-    userExpireTime($token);
+    if($token) userExpireTime();
     return $token && findUserByToken($token);
 }
 

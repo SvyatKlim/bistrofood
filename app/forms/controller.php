@@ -1,4 +1,5 @@
 <?php
+
 if (requestToken()) {
     match (getRequestType()) {
         'create_product' => createProduct(createProductParams()),
