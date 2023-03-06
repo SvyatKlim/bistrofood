@@ -46,7 +46,7 @@ function authUserPasswordValidation(string $fieldsPassword, $userPassword): bool
 function setToken(array $user) {
     $query = DB::connect()->prepare("UPDATE users SET token = :token WHERE id= :id");
     $hash = md5(time() . '_' . $user['id']);
-    $_SESSION['token']['expire_time'] = (time() + 30);
+    $_SESSION['token']['expire_time'] = (time() + 1800);
     $query->bindParam('token',$hash);
     $query->bindParam('id',$user['id']);
 
