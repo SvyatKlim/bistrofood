@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 20 2023 г., 03:49
+-- Время создания: Мар 07 2023 г., 00:44
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -38,7 +38,7 @@ CREATE TABLE `content` (
 --
 
 INSERT INTO `content` (`id`, `name`, `content`) VALUES
-(1, 'navigation', '{\"logo\": \"logo.png\", \"links\": [{\"hash\": \"#banner\", \"title\": \"Home\"}, {\"hash\": \"#about-us\", \"title\": \"Our Story\"}, {\"hash\": \"#catalog\", \"title\": \"Catalog\"}, {\"hash\": \"#team\", \"title\": \"Team\"}, {\"hash\": \"#reviews\", \"title\": \"Reviews\"}, {\"hash\": \"#contact-us\", \"title\": \"Contact Us\"}, {\"hash\": \"#gallery\", \"title\": \"Gallery\"}]}'),
+(1, 'navigation', '{\"logo\": \"1677944803_logo.png\", \"links\": [{\"hash\": \"#home\", \"title\": \"Home\"}, {\"hash\": \"#about-us\", \"title\": \"Our Story\"}, {\"hash\": \"#catalog\", \"title\": \"Catalog\"}, {\"hash\": \"#team\", \"title\": \"Team\"}, {\"hash\": \"#reviews\", \"title\": \"Reviews\"}, {\"hash\": \"#contact-us\", \"title\": \"Contact Us\"}, {\"hash\": \"#gallery\", \"title\": \"Gallery\"}]}'),
 (2, 'social', '{\"title\": \"Social Network\", \"social_links\": [{\"url\": \"https://twitter.com/\", \"icon\": \"twitter-svgrepo-com.svg\"}, {\"url\": \"https://www.facebook.com/\", \"icon\": \"facebook-svgrepo-com.svg\"}, {\"url\": \"https://myaccount.google.com/\", \"icon\": \"google-plus-svgrepo-com.svg\"}, {\"url\": \"https://www.pinterest.com/\", \"icon\": \"pinterest-svgrepo-com.svg\"}, {\"url\": \"https://www.instagram.com/\", \"icon\": \"instagram-svgrepo-com.svg\"}]}'),
 (3, 'banner', '{\"banner_slider\": {\"slide_0\": {\"image\": {\"alt\": \"Avocado\", \"source\": {\"laptop\": \"avocado-first-screen-1440.jpg\", \"mobile\": \"avocado-first-screen-mobile.jpg\", \"tablet\": \"avocado-first-screen-tablet.jpg\", \"desktop\": \"avocado-first-screen-1920.jpg\", \"widescreen\": \"avocado-first-screen-2560.jpg\"}, \"image_type\": \"image/jpg\"}, \"title\": \"Bistro Cafe\", \"button\": {\"url\": \"#\", \"name\": \"Find Out More\"}, \"subtitle\": \"Nothing brings together like\", \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis semnibh idelituis sed odio sit amet.\"}, \"slide_1\": {\"image\": {\"alt\": \"Burger\", \"source\": {\"laptop\": \"burger-1440.jpg\", \"mobile\": \"burger-mobile.jpg\", \"tablet\": \"burger-tablet.jpg\", \"desktop\": \"burger-1920.jpg\", \"widescreen\": \"burger-2560.jpg\"}, \"image_type\": \"image/jpg\"}, \"title\": \"Bistro Cafe\", \"button\": {\"url\": \"#\", \"name\": \"Find Out More\"}, \"subtitle\": \"Nothing brings together like\", \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis semnibh idelituis sed odio sit amet.\"}, \"slide_2\": {\"image\": {\"alt\": \"Steak\", \"source\": {\"laptop\": \"steak-1440.jpg\", \"mobile\": \"steak-mobile.jpg\", \"tablet\": \"steak-tablet.jpg\", \"desktop\": \"steak-1920.jpg\", \"widescreen\": \"steak-2560.jpg\"}, \"image_type\": \"image/jpg\"}, \"title\": \"Bistro Cafe\", \"button\": {\"url\": \"#\", \"name\": \"Find Out More\"}, \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis semnibh idelituis sed odio sit amet.\"}}}'),
 (4, 'about', '{\"image\": {\"alt\": \"White background\", \"url\": \"eggs.png\", \"image_type\": \"image/png\"}, \"title\": \"Who We Are\", \"button\": {\"url\": \"#\", \"text\": \"Find Out More\"}, \"subtitle\": \"Our Story\", \"description\": \"Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis sem nibh id elituis sed odio sit amet. Aenean sollicitudin, lorem quis bibendum auctor, nisi conse quat ipsum, nec sagittis sem nibh id elituis sed odio sit amet.\"}'),
@@ -67,7 +67,12 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `total`, `created_at`) VALUES
-(8, 9, 65.7, '2023-02-20 00:22:38');
+(8, 9, 65.7, '2023-02-20 00:22:38'),
+(9, 9, 81, '2023-03-05 22:17:05'),
+(10, 11, 351.2, '2023-03-05 23:58:05'),
+(11, 11, 64.9, '2023-03-05 23:58:41'),
+(12, 11, 105.1, '2023-03-06 00:46:05'),
+(16, 11, 422, '2023-03-06 21:06:00');
 
 -- --------------------------------------------------------
 
@@ -83,6 +88,22 @@ CREATE TABLE `order_products` (
   `single_price` float UNSIGNED DEFAULT NULL,
   `additions` json DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `order_products`
+--
+
+INSERT INTO `order_products` (`id`, `order_id`, `product_id`, `quantity`, `single_price`, `additions`) VALUES
+(5, 9, 22, 1, 81, '[]'),
+(6, 10, 22, 4, 81, '[{\"name\": \"Soy Sauce Kikkoman\", \"price\": 0.2, \"total\": 0.2, \"quantity\": 1, \"parent_id\": 22, \"product_id\": 25}, {\"name\": \"The Hot Sauce BBQ\", \"price\": 1.5, \"total\": 1.5, \"quantity\": 1, \"parent_id\": 22, \"product_id\": 26}]'),
+(7, 10, 28, 3, 8.5, '[]'),
+(8, 11, 27, 5, 9.4, '[]'),
+(9, 11, 31, 2, 5, '[]'),
+(10, 11, 30, 1, 7.9, '[]'),
+(11, 12, 27, 4, 9.4, '[{\"name\": \"Soy Sauce Kikkoman\", \"price\": 0.2, \"total\": 0.6000000000000001, \"quantity\": 3, \"parent_id\": 27, \"product_id\": 25}, {\"name\": \"The Hot Sauce BBQ\", \"price\": 1.5, \"total\": 3, \"quantity\": 2, \"parent_id\": 27, \"product_id\": 26}]'),
+(12, 12, 29, 6, 9.9, '[{\"name\": \"The Hot Sauce BBQ\", \"price\": 1.5, \"total\": 4.5, \"quantity\": 3, \"parent_id\": 29, \"product_id\": 26}]'),
+(19, 16, 28, 2, 8.5, '[]'),
+(20, 16, 22, 5, 81, '[]');
 
 -- --------------------------------------------------------
 
@@ -105,39 +126,40 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `quantity`, `price`, `is_main`, `image_url`) VALUES
-(22, 'GGG Steak Ribeye', 'Wagyu Ribeye with truffle-asiago-roasted garlic mashed potatoes and Blue Lake green beans with bacon, red onion, and garlic chips', 10, 81, 1, 'http://bistrofood.loc/assets/img/picture/uploads/loija-nguyen-NYBnDWeOX2c-unsplash.jpg'),
-(25, 'Soy Sauce Kikkoman', 'Traditionally Brewed Soy Sauce, Organic Soy Sauce, All Purpose Seasoning', 95, 0.2, 0, 'http://bistrofood.loc/assets/img/picture/uploads/31SSKtad0-L.jpg'),
-(26, 'The Hot Sauce BBQ', 'Spicy barbecue sauce for lovers of all kinds of meat\r\nAn authentic recipe that highlights the natural hotness, with added natural smoky flavor\r\nOnly the best peppers from our own harvest are used, without seeds, skins and husks\r\n100% natural product, no preservatives, no GMOs, no artificial additives, natural color and aroma', 30, 1.5, 0, 'http://bistrofood.loc/assets/img/picture/uploads/BBQ Sauce.jpg'),
-(27, 'Capo Steak', 'Class aptent taciti ciosqu', 20, 9.4, 1, 'http://bistrofood.loc/assets/img/picture/uploads/steak-capo.jpg'),
-(28, 'King Burger ', 'Class aptent taciti ciosqu \r\nClass aptent taciti ciosqu', 20, 8.5, 1, 'http://bistrofood.loc/assets/img/picture/uploads/king-burger.jpg'),
-(29, 'Mexican Burger', 'Class aptent taciti ciosqu', 25, 9.9, 1, 'http://bistrofood.loc/assets/img/picture/uploads/mexican-burger.jpg'),
-(30, 'Chocolate Cake ', 'Class aptent taciti ciosqu\r\nClass aptent taciti ciosqu\r\nClass aptent taciti ciosqu', 1, 7.9, 1, 'http://bistrofood.loc/assets/img/picture/uploads/choco-cake.jpg'),
-(31, 'Panna Cotta', 'The best Pana Cotta in our city.', 10, 5, 1, 'http://bistrofood.loc/assets/img/picture/uploads/panna-cotta.png');
+(22, 'GGG Steak Ribeye', 'Wagyu Ribeye with truffle-asiago-roasted garlic mashed potatoes and Blue Lake green beans with bacon, red onion, and garlic chips', 100, 81, 1, 'http://bistrofood.loc/assets/img/picture/uploads/loija-nguyen-NYBnDWeOX2c-unsplash.jpg'),
+(25, 'Soy Sauce Kikkoman', 'Traditionally Brewed Soy Sauce, Organic Soy Sauce, All Purpose Seasoning', 91, 0.2, 0, 'http://bistrofood.loc/assets/img/picture/uploads/31SSKtad0-L.jpg'),
+(26, 'The Hot Sauce BBQ', 'Spicy barbecue sauce for lovers of all kinds of meat\r\nAn authentic recipe that highlights the natural hotness, with added natural smoky flavor\r\nOnly the best peppers from our own harvest are used, without seeds, skins and husks\r\n100% natural product, no preservatives, no GMOs, no artificial additives, natural color and aroma', 24, 1.5, 0, 'http://bistrofood.loc/assets/img/picture/uploads/BBQ Sauce.jpg'),
+(27, 'Capo Steak', 'Class aptent taciti ciosqu', 11, 9.4, 1, 'http://bistrofood.loc/assets/img/picture/uploads/steak-capo.jpg'),
+(28, 'King Burger ', 'Class aptent taciti ciosqu \r\nClass aptent taciti ciosqu', 15, 8.5, 1, 'http://bistrofood.loc/assets/img/picture/uploads/king-burger.jpg'),
+(29, 'Mexican Burger', 'Class aptent taciti ciosqu', 19, 9.9, 1, 'http://bistrofood.loc/assets/img/picture/uploads/mexican-burger.jpg'),
+(30, 'Chocolate Cake ', 'Class aptent taciti ciosqu\r\nClass aptent taciti ciosqu\r\nClass aptent taciti ciosqu', 100, 7.9, 1, 'http://bistrofood.loc/assets/img/picture/uploads/choco-cake.jpg'),
+(31, 'Panna Cotta', 'The best Pana Cotta in our city.', 20, 5, 1, 'http://bistrofood.loc/assets/img/picture/uploads/panna-cotta.png');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Структура таблицы `Users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `Users` (
   `id` int NOT NULL,
+  `token` text,
   `name` varchar(50) NOT NULL,
   `surname` varchar(50) NOT NULL,
+  `balance` float UNSIGNED NOT NULL DEFAULT '0',
   `email` varchar(150) NOT NULL,
   `password` text NOT NULL,
   `is_admin` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Дамп данных таблицы `users`
+-- Дамп данных таблицы `Users`
 --
 
-INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `is_admin`) VALUES
-(1, 'admin', 'adminovich', 'admin.adminovich@gmail.com', 'test1234', 0),
-(2, 'Test', 'test', 'test@gmail.com', '$2y$10$MhJwjJ07ROYCoa7DYST/1uVFqcAUX6.fVMJnVKx/QvQyPMyOhOVxK', 1),
-(9, 'admin', 'admin', 'admin@gmail.com', '$2y$10$iaO8BLj.xOljog5OoXNRVuu6GL/9FAwC33GoqTC2.pRuc17.ldcm6', 1),
-(10, 'Sviat TEst', 'SciatTest', 'baspaldin@gmail.com', '$2y$10$bY9RIoDaVUKd3/LP3MwaSuSUp8/JMuo5XemCblqwFkFkLeztxTuna', 0);
+INSERT INTO `Users` (`id`, `token`, `name`, `surname`, `balance`, `email`, `password`, `is_admin`) VALUES
+(9, NULL, 'admin', 'admin', 100500, 'admin@gmail.com', '$2y$10$iaO8BLj.xOljog5OoXNRVuu6GL/9FAwC33GoqTC2.pRuc17.ldcm6', 1),
+(11, '4cf9bc451058d0dbff96be86f266982f', 'Test User', 'Testenko', 578, 'test@info.bg', '$2y$10$et5s8.s3qgmybZ.Uif0QUOZWeWM5RAa74UjLR64YDWQF7fCBWV8NO', 0),
+(12, NULL, 'test test', 'testerko', 0, 'test@gmail.com', '$2y$10$YsxnOJwuTaJ9Oxkdkkk3p.z6bSRNM3SsfpgolgFDxtpdqP8ufedmq', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -166,9 +188,9 @@ ALTER TABLE `products`
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Индексы таблицы `users`
+-- Индексы таблицы `Users`
 --
-ALTER TABLE `users`
+ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -180,13 +202,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблицы `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
@@ -195,10 +217,10 @@ ALTER TABLE `products`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT для таблицы `users`
+-- AUTO_INCREMENT для таблицы `Users`
 --
-ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `Users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
