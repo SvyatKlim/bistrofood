@@ -4,7 +4,6 @@ class Carousel {
     constructor(container, pagination) {
         this.container = container;
         this.pagination = pagination;
-        console.log(this.container, this.pagination)
     }
 
     init() {

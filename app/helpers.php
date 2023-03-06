@@ -22,12 +22,15 @@ function getUrl(): string
     return explode('?', $url)[0];
 
 }
-function getHomeUrl () {
+
+function getHomeUrl()
+{
     isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? $link = "https" : $link = "http";
     $link .= "://";
     $link .= $_SERVER['HTTP_HOST'];
     return $link;
 }
+
 function convertContentToAssoc(array $data = []): array
 {
     $assoc = [];
@@ -59,7 +62,7 @@ function showImageSrc(string $imgType = '', array $srcArr = [])
 
 function getRequestType(): string
 {
-    $type = str_replace('>', '' ,filter_input(INPUT_POST, 'type'));
+    $type = str_replace('>', '', filter_input(INPUT_POST, 'type'));
     unset($_POST['type']);
     return htmlspecialchars($type);
 }
@@ -119,10 +122,25 @@ function URL_exists(string $url): bool
     $handle = @fopen($url, 'r');
 
 // Check if file exists
-    if(!$handle){
+    if (!$handle) {
         return false;
-    }else{
+    } else {
         return true;
     }
 }
 
+function requestToken(): bool
+{
+    $token = filter_input(INPUT_POST, 'token');
+    userExpireTime($token);
+    return $token && findUserByToken($token);
+}
+
+function userExpireTime(): void
+{
+    if ($_SESSION['token']['expire_time'] <= time()) {
+        unset($_SESSION['token']['expire_time']);
+        redirect('/logout');
+        notify("Your session has timed out. ");
+    }
+}

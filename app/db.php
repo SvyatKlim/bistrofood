@@ -33,6 +33,7 @@ function getUserByEmail(string $email): array|bool
 
     return $user;
 }
+
 function getUserById(int $id): array|bool
 {
     $user = dbSelect(Tables::Users, condition: "id = '{$id}'", isSingle: true);
@@ -60,11 +61,41 @@ function dbCount(Tables $table, string $condition = null)
     return dbSelect($table, 'Count(id) as count', condition: $condition, isSingle: true);
 }
 
-function productsByOrder (int $orderId):array|bool {
+function productsByOrder(int $orderId): array|bool
+{
 
     $query = "SELECT p.id, p.name, p.description, op.quantity, op.single_price, op.additions FROM order_products op LEFT JOIN products p on op.product_id = p.id WHERE op.order_id = :order_id";
     $query = DB::connect()->prepare($query);
     $query->bindParam('order_id', $orderId, PDO::PARAM_INT);
     $query->execute();
     return $query->fetchAll();
+}
+
+function updateUserBalance(int $userId, float $total): void
+{
+    $user = dbFind(Tables::Users, $userId);
+
+    if ($user['balance'] < $total) {
+        throw new Exception('Not enough money on you balance');
+    }
+
+    $query = "UPDATE " . Tables::Users->value . " SET balance = balance - :total WHERE id = :id";
+    $query = DB::connect()->prepare($query);
+
+    $query->bindParam('total', $total);
+    $query->bindParam('id', $userId);
+
+    $query->execute();
+
+
+}
+
+function findUserByToken(string $token)
+{
+    $query = DB::connect()->prepare("SELECT * FROM users WHERE token = :token");
+    $query->bindParam('token', $token);
+    if (!$query->execute()) {
+        throw new Exception('oops', 422);
+    }
+    return $query->fetch();
 }

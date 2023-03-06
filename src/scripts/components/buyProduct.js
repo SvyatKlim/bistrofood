@@ -49,7 +49,6 @@ const buyProduct = () => {
     })
     additionalToggleFields.forEach((el) => {
         el.addEventListener('change', function () {
-            console.log(el)
             const parentWrapper = this.closest(selectors.modal.additions.item),
                 additionalQuantity = parentWrapper.querySelector(selectors.modal.additions.qty),
                 additionalTotal = parentWrapper.querySelector(selectors.modal.additions.total),
@@ -63,7 +62,7 @@ const buyProduct = () => {
             } else {
                 additionalQuantity.disabled = true;
                 additionalQuantity.value = '';
-                additionalTotal.innerHTML = - renderPrice(parseFloat(additionalPrice.textContent));
+                additionalTotal.innerHTML = -renderPrice(parseFloat(additionalPrice.textContent));
                 calculateFinalPrice();
                 additionalTotal.innerHTML = '';
             }
@@ -110,8 +109,40 @@ const buyProduct = () => {
         finalPriceElement.innerHTML = productTotal.toFixed(1);
     }
 
-    function updateAdditionsQuantityFields(){
-        console.log(Cookies.get())
+    function updateAdditionsQuantityFields() {
+        let cart = Cookies.get('cart');
+        cart = JSON.parse(cart) ?? [];
+        if (cart.length > 0) {
+            let additions = [];
+
+            cart.reduce(function (items, cartItem) {
+                if (cartItem.additions) {
+                    for (let i = 0; i < cartItem.additions.length; i++) {
+                        const key = cartItem.additions[i],
+                            qty = cartItem.additions_qty[i];
+
+                        items[key] = items[key] ? (items[key] + qty) : qty;
+                    }
+                }
+                return items
+            }, additions);
+
+            if (Object.keys(additions).length > 0) {
+                for (let key in additions) {
+                    const additionQty = [...document.querySelectorAll(`.additional-qty-id-${key}`)],
+                        max = additionQty.map((item) => item.getAttribute('max')),
+                        newMax = max.map((item) => item - additions[key]);
+
+                    if (newMax <= 0) {
+                        additionQty.map((item) => item.closest(selectors.modal.additions.item).remove());
+                    } else {
+                        additionQty.forEach((item) => item.setAttribute('max',newMax));
+
+                    }
+
+                }
+            }
+        }
     }
 
 }

@@ -1,8 +1,10 @@
-<?php require_once ACCOUNT_PARTS_DIR . '/header.php'; ?>
+<?php require_once ACCOUNT_PARTS_DIR . '/header.php';
+?>
 <section class="d-flex-column " style="padding: 10rem 0">
     <div class="container">
         <div class="row ">
             <div class="offset-md-2 col-md-8">
+                <h3>My Balance : $<?php echo str_replace('.', '' , $userInfo['balance']) ?></h3>
                 <h3>My orders</h3>
                 <table class="table table-string-columns admin-table">
                     <thead>

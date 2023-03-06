@@ -11,6 +11,8 @@ function createOrder()
         $orderId = insertOrder(userId(), $total);
         setProductsToOrder($orderId,$cart);
 
+        updateUserBalance(userId(),$total);
+
         DB::connect()->commit();
 
         updateCart([]);

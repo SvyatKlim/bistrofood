@@ -3,7 +3,6 @@ require PARTS_DIR . '/header.php';
 
 $content = getContent('name IN ("banner", "about", "products","team","reviews","booking","gallery")');
 extract($content);
-//dd($content);
 if (!empty($banner)) {
     require PARTS_DIR . '/home/intro.php';
 }

@@ -59,6 +59,7 @@ switch (getUrl()) {
         conditionRedirect(!isAuth());
         $userId = userId();
         $orders = dbSelect(Tables::Orders,condition: " user_id = {$userId}");
+        $userInfo = getUserById($userId);
         require PAGE_DIR . '/account/orders/index.php';
         break;
     case (bool)preg_match('/account\/orders\/(\d+)/', getUrl(), $match):
