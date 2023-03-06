@@ -2,9 +2,9 @@
 extract(formSessionData('login'));
 ?>
     <section class="login">
-        <div class="wrapper wrapper--w680 pt-after-header container">
-            <div class="card col-md-10 flex-row">
-                <div class="login__img d-flex col-md-4">
+        <div class="wrapper pt-after-header container">
+            <div class="card col-md-10 flex-column flex-sm-row">
+                <div class="login__img d-flex  col-sm-4">
                     <img src="<?= IMAGES_URI; ?>login-decor.jpg" alt="Image">
                 </div>
                 <div class="card-body login__card col-md-6">

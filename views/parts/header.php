@@ -20,7 +20,7 @@ $cartIcon = file_get_contents(SVG_URI . 'cart.svg');
 <header class="header fixed-top">
     <nav class="navbar navbar-dark" aria-label="First navbar example">
         <div class="container-fluid ms-5 me-5">
-            <div class="col-4">
+            <div class="col-2 btn-burger">
                 <button class="navbar-toggler header__navbar-btn collapsed" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@ $cartIcon = file_get_contents(SVG_URI . 'cart.svg');
                 </a>
             <?php endif; ?>
 
-            <div class="navbar__inner d-flex col-4">
+            <div class="navbar__inner d-none d-lg-flex">
                 <a href="<?= getHomeUrl() . '/cart'; ?>"
                    class="cart-link js-cart-icon d-flex align-items-center nav-link">
                     <span class="me-2">Cart</span> <?= $cartIcon; ?>
@@ -59,7 +59,7 @@ $cartIcon = file_get_contents(SVG_URI . 'cart.svg');
 
                 <?php endif;
                 if (!empty($socials)) : ?>
-                    <div class="col-md-3 d-flex header__socials">
+                    <div class="col-md-3 d-none d-lg-flex header__socials">
                         <ul class="social-network d-flex align-items-center gap-3">
                             <?php if (!empty($socials['social_links'])) {
                                 foreach ($socials['social_links'] as $link) : ?>
@@ -103,6 +103,31 @@ $cartIcon = file_get_contents(SVG_URI . 'cart.svg');
                 foreach ($mainFields['navigation']['links'] as $link) {
                     echo sprintf($template, $link['hash'], $link['title']);
                 } ?>
+                <li class="nav-item col d-lg-none">
+                    <a href="<?= getHomeUrl() . '/cart'; ?>"
+                       class="cart-link cart-link-mobile js-cart-icon d-flex align-items-center nav-link">
+                        <span class="me-2  black h3">Cart</span> <?= $cartIcon; ?></a>
+                </li>
+                <?php if (isAdmin()) : ?>
+                <li class="nav-item col d-lg-none">
+                    <a class="nav-link mb-0 black h3" href="admin/dashboard">Dashboard</a>
+                </li>
+                <?php endif;
+                if (!isAuth()): ?>
+                    <li class="login d-flex mb-0 me-2 d-lg-none">
+                        <a class="nav-link black h3 mb-0" href="/login">Sign In</a>
+                        <span class=""> | </span>
+                        <a class="nav-link black h3 mb-0" href="/registration">Sign Up</a>
+                    </li>
+                <?php else: ?>
+                    <li class="d-flex align-items-center mb-0 me-2 d-lg-none">
+                        <a class="nav-link black h3 " href="/account/orders">My Orders</a>
+                    </li>
+                    <li class="logout d-flex align-items-center mb-0 me-2 d-lg-none">
+                        <a class="nav-link black h3 mb-0" href="/logout">Log Out</a>
+                    </li>
+
+                <?php endif; ?>
             </ul>
         <?php endif; ?>
     </div>

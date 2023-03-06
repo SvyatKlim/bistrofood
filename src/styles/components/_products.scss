@@ -24,6 +24,13 @@
   &__items {
     margin-top: 55px;
   }
+  @media screen and (max-width: 768px){
+    &__items{
+      .col{
+        margin-bottom: 40px!important;
+      }
+    }
+  }
 }
 
 .product {
@@ -97,6 +104,9 @@
       transition: transform 0.8s ease-out;
     }
   }
-
-
+  @media screen and (max-width: 768px){
+    &__img{
+      order: 1 !important;
+    }
+  }
 }

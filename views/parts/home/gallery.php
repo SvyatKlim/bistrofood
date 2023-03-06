@@ -60,9 +60,9 @@
                             <!-- End Input Telephone -->
 
                             <!-- Start Input Date , Start Time and End Time -->
-                            <div class="form-row col-md-12 d-flex">
+                            <div class="form-row col-lg-12 d-flex flex-column flex-lg-row w-100">
                                 <!-- Start Input Date -->
-                                <div class="form-group col-md-4 d-flex-column">
+                                <div class="form-group col-lg-4 d-flex-column">
                                     <label for="inputDate"><?= $booking['fields']['date'] ?? ''; ?></label>
                                     <input type="date" class="form-control" id="inputDate" name="date" required/>
                                     <small class="form-text text-muted">Please choose date and time for meeting.</small>
@@ -70,7 +70,7 @@
                                 <!-- End Input Date -->
 
                                 <!-- Start Input Start Time -->
-                                <div class="form-group col-md-4 d-flex-column">
+                                <div class="form-group col-lg-4 d-flex-column">
                                     <label><?= $booking['fields']['time'] ?? ''; ?></label>
                                     <div class="d-flex flex-row justify-content-between align-items-center">
                                         <select class="form-control mr-1" id="inputStartTimeHour" name="startHour"
@@ -95,7 +95,7 @@
                                     </div>
                                 </div>
                                 <!-- End Input Start Time -->
-                                <div class="form-group col-md-4 d-flex-column">
+                                <div class="form-group col-lg-4 d-flex-column">
                                     <label for="inputDate"><?= $booking['fields']['people'] ?? ''; ?></label>
                                     <input type="number" class="form-control" id="inputPeople" name="number" required/>
                                     <small class="form-text text-muted">Please choose how much people will be .</small>

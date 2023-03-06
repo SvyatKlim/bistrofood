@@ -23,9 +23,9 @@ $newsletter = $mainFields['footer']['newsletter'] ?? [];
                 <section class="newsletter position-relative col-md-10 m-auto" style="background: url('<?= IMAGES_URI; ?>newsletter-bg.png') no-repeat; background-size: cover;">
                     <form class="form position-relative z-index-2" action="">
                         <!--Grid row-->
-                        <div class="row d-flex align-items-center ms-5 me-5">
+                        <div class="row d-flex align-items-center ms-5 me-5 newsletter__item__wrapper">
                             <!--Grid column-->
-                            <div class="col-auto me-auto">
+                            <div class="col-auto me-auto newsletter__item">
                                 <h3 class="text-white"><?= $newsletter['title']; ?></h3>
                                 <p class="pt-2 text-white-50">
                                    <?= $newsletter['subtitle']; ?>
@@ -34,7 +34,7 @@ $newsletter = $mainFields['footer']['newsletter'] ?? [];
                             <!--Grid column-->
 
                             <!--Grid column-->
-                            <div class="col-md-4 col-12">
+                            <div class="col-md-4 col-12 newsletter__item">
                                 <!-- Email input -->
                                 <div class="form-outline ">
                                     <input type="email" id="email-field"
@@ -45,7 +45,7 @@ $newsletter = $mainFields['footer']['newsletter'] ?? [];
                             <!--Grid column-->
 
                             <!--Grid column-->
-                            <div class="col-md-3 col-12">
+                            <div class="col-md-3 col-12 newsletter__item">
                                 <!-- Submit button -->
                                 <button type="submit" class="btn">
                                     <?= $newsletter['button_text']; ?>

@@ -10,7 +10,7 @@
     </div>
     <div class="container pt-60 pb-80 z-index-2">
         <div class="row">
-            <div class="col-xxl-6">
+            <div class="col-lg-6">
                 <p class="text-orange text-uppercase fw-bold"> <?= $about['subtitle'] ?? ''; ?></p>
                 <h2 class="title fst-italic"><?= $about['title'] ?? ''; ?></h2>
                 <p class="mb-5 mt-2">

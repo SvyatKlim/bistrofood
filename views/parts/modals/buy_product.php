@@ -16,25 +16,25 @@ $additions = dbSelect(Tables::Products, columns: 'id, name, quantity, price', co
                 <div class="modal-body">
                     <div class="container">
                         <div class="row product-row__header">
-                            <div class="col-4 d-flex align-items-center"><b>Product name</b></div>
-                            <div class="col-3 d-flex align-items-center"><b>Single price</b></div>
-                            <div class="col-3 d-flex align-items-center"><b>Quantity</b></div>
-                            <div class="col-2 d-flex align-items-center"><b>Total</b></div>
+                            <div class="col-6 col-md-4 d-flex align-items-center"><b>Product name</b></div>
+                            <div class="col-6 col-md-3 d-flex align-items-center"><b>Single price</b></div>
+                            <div class="col-6 col-md-3 d-flex align-items-center"><b>Quantity</b></div>
+                            <div class="col-6 col-md-2 d-flex align-items-center"><b>Total</b></div>
                         </div>
                         <hr>
                         <div class="row product-row__body">
-                            <div class="col-4 d-flex align-items-center js-product-name"></div>
-                            <div class="col-3 d-flex align-items-center js-product-price"></div>
-                            <div class="col-3 d-flex align-items-center ">
+                            <div class="col-6 col-md-4 d-flex align-items-center js-product-name"></div>
+                            <div class="col-6 col-md-3 d-flex align-items-center js-product-price"></div>
+                            <div class="col-6 col-md-3 d-flex align-items-center ">
                                 <input type="number" name="quantity"
                                        class="js-product-quantity quantity-field form-control" min="1" value="1">
                             </div>
-                            <div class="col-2 d-flex align-items-center js-product-total"></div>
+                            <div class="col-6 col-md-2 d-flex align-items-center js-product-total"></div>
                         </div>
-                        <div class="row pt-3">
+                        <div class="row pt-3 flex-column flex-md-row">
                             <h4>Additional products :</h4>
                             <?php foreach ($additions as $product) : ?>
-                                <div class="additional-item col-4">
+                                <div class="additional-item col-md-4">
                                     <div class="form-check form-switch">
                                         <label class="form-check-label h6"
                                                for="additional-<?= $product['id']; ?>">

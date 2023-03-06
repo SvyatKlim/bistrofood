@@ -4,7 +4,7 @@ var_dump($errors);
 ?>
     <section class="registration">
         <div class="wrapper wrapper--w680 pt-after-header container">
-            <div class="card col-md-11 flex-row">
+            <div class="card col-md-11 flex-column flex-sm-row">
                 <div class="login__img d-flex col-md-5">
                     <img src="<?= IMAGES_URI; ?>login-decor.jpg" alt="Image">
                 </div>
@@ -39,14 +39,14 @@ var_dump($errors);
                                 </div>
                                 <?= formError($errors['email'] ?? null) ?>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label" for="password">Password</label>
                                     <input class="form-control" name="password" type="password" id="password">
                                 </div>
                                 <?= formError($errors['password'] ?? null) ?>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="label" for="password_confirmation">Password Confirmation</label>
                                     <input class="form-control" name="password_confirmation" type="password"

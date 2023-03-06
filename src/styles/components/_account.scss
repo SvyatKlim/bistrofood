@@ -1,0 +1,7 @@
+.login {
+  &__img img {
+    @media screen and (max-width: 576px) {
+      max-height: 300px;
+    }
+  }
+}

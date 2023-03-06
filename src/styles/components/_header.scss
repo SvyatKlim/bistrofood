@@ -29,6 +29,28 @@
       }
     }
   }
+
+  @media screen and (max-width: 992px) {
+    .btn-burger {
+      order: 2;
+      width: auto;
+    }
+    .custom-logo-link {
+      order: 1;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .container-fluid{
+      margin: 0!important;
+    }
+    .custom-logo-link{
+      padding:0;
+      img{
+        max-height: 70px;
+        width: auto;
+      }
+    }
+  }
 }
 
 .nav {
@@ -42,8 +64,9 @@
       }
     }
   }
-  &-link{
-   color: $white;
+
+  &-link {
+    color: $white;
     @media (hover: hover) {
       &:hover {
         color: $beige-hover;
@@ -54,4 +77,22 @@
 
 .offcanvas {
   background-color: $beige;
+
+  .login {
+    display: flex;
+    align-items: center;
+
+    a {
+      color: $black;
+      @media (hover: hover) {
+        &:hover {
+          color: $orange-hover;
+        }
+      }
+    }
+  }
+}
+
+.cart-link-mobile path {
+  stroke: $black;
 }
